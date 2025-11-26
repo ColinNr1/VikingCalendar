@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VikingLuck Adventskalender</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+
+      /* FINAL VikingLuck Christmas Background */
+      background:
+        linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.80)),
+        url("https://i.postimg.cc/RFNn3Qky/Untitled-design.png")
+          no-repeat center center fixed;
+
+      background-size: cover;
+      background-position: center center;
+
+      color: #fdf4e3;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 20px;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 230, 180, 0.08) 0, transparent 55%),
+        radial-gradient(circle at 80% 0, rgba(255, 255, 255, 0.05) 0, transparent 60%),
+        radial-gradient(circle at 10% 70%, rgba(200, 60, 40, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 90% 80%, rgba(240, 200, 120, 0.14) 0, transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .login-screen {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5000;
+    }
+
+    .login-box {
+      background: rgba(45, 20, 10, 0.96);
+      border-radius: 18px;
+      padding: 28px 30px 24px;
+      width: 340px;
+      border: 1px solid rgba(255, 215, 160, 0.9);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.95),
+        0 0 22px rgba(255, 230, 190, 0.75);
+      position: relative;
+    }
+
+    .login-box::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 10% 0, rgba(255,255,255,0.12) 0, transparent 55%),
+        radial-gradient(circle at 90% 0, rgba(255,240,210,0.18) 0, transparent 60%),
+        linear-gradient(180deg, rgba(200,40,30,0.35), transparent 55%, rgba(255,230,190,0.25));
+      mix-blend-mode: screen;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .login-title {
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 0.12em;
+      color: #ffe8c6;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .login-sub {
+      text-align: center;
+      font-size: 11px;
+      color: #f7d8b2;
+      margin-bottom: 16px;
+      opacity: 0.95;
+    }
+
+    .login-label {
+      font-size: 13px;
+      color: #f7d8b2;
+      margin-top: 8px;
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 8px 10px;
+      background: #2f1910;
+      border-radius: 8px;
+      border: 1px solid #9a5a2f;
+      color: #ffe9c6;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .login-input:focus {
+      border-color: #f4c66c;
+      box-shadow: 0 0 0 1px rgba(244, 198, 108, 0.5);
+      background: #371d12;
+    }
+
+    .login-btn {
+      margin-top: 18px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      background: linear-gradient(135deg, #f4c66c, #ffeab8);
+      color: #2d1307;
+      box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.9),
+        0 0 18px rgba(255, 225, 180, 0.7);
+    }
+
+    .login-btn:hover {
+      filter: brightness(1.07);
+      transform: translateY(-1px);
+    }
+
+    .login-error {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #ffb5a5;
+      text-align: center;
+      display: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f0c673;
+      margin-bottom: 8px;
+    }
+
+    .title {
+      font-size: 32px;
+      letter-spacing: 0.06em;
+      color: #ffe9c0;
+      text-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #f1d3a5;
+      opacity: 0.95;
+    }
+
+    .settings-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 10px 0 4px;
+      flex-wrap: wrap;
+      font-size: 11px;
+    }
+
+    .toggle-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 215, 160, 0.7);
+      background: rgba(40, 20, 10, 0.9);
+      color: #f8e1c5;
+      font-size: 11px;
+      padding: 4px 10px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.6),
+        0 0 10px rgba(255, 210, 150, 0.4);
+    }
+
+    .toggle-btn:hover {
+      filter: brightness(1.05);
+      transform: translateY(-0.5px);
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .calendar {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .calendar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .title {
+        font-size: 24px;
+      }
+    }
+
+    .door {
+      position: relative;
+      perspective: 900px;
+      padding: 3px;
+      border-radius: 15px;
+      background:
+        radial-gradient(circle at top, #ffde9a 0%, #a64223 45%, #4a150a 95%);
+      border: 2px solid rgba(212, 175, 55, 0.9);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.85),
+        0 16px 28px rgba(0, 0, 0, 0.95),
+        0 0 18px rgba(212, 175, 55, 0.5),
+        inset 0 0 8px rgba(212, 175, 55, 0.35);
+      overflow: hidden;
+    }
+
+    .door-special {
+      background:
+        radial-gradient(circle at top, #ffe8b5 0%, #cf3f27 40%, #5e170c 95%);
+      border: 2px solid rgba(255, 230, 180, 0.95);
+      box-shadow:
+        0 0 0 1px rgba(255, 220, 160, 0.6),
+        0 20px 34px rgba(0, 0, 0, 1),
+        0 0 26px rgba(255, 230, 180, 0.75),
+        inset 0 0 10px rgba(255, 230, 180, 0.45);
+    }
+
+    .door-inner {
+      position: relative;
+      border-radius: 12px;
+      padding: 24px 8px;
+      text-align: center;
+      cursor: pointer;
+      background: linear-gradient(145deg, #5a1a14, #9c261d);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 0 12px rgba(255, 215, 128, 0.35);
+      border: 2px solid rgba(255, 215, 128, 0.6);
+      transform-origin: left center;
+      transition:
+        transform 0.55s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    .door-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 0, rgba(255, 255, 255, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 85% 0, rgba(255, 244, 214, 0.18) 0, transparent 60%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .door-number {
+      font-size: 26px;
+      font-weight: bold;
+      color: #fff7e0;
+      text-shadow:
+        0 0 10px rgba(0, 0, 0, 0.8),
+        0 0 18px rgba(255, 250, 230, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .door-inner:hover {
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+        0 0 18px rgba(255, 230, 180, 0.45);
+      background: linear-gradient(145deg, #7a2219, #c43025);
+      filter: brightness(1.05);
+    }
+
+    .door-inner.opened {
+      transform: rotateY(-80deg);
+      box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+        0 18px 26px rgba(0, 0, 0, 0.9);
+    }
+
+    .door.locked .door-inner {
+      cursor: not-allowed;
+      filter: grayscale(0.35) brightness(0.9);
+      opacity: 0.7;
+    }
+
+    .door.locked .door-inner:hover {
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 0 10px rgba(0, 0, 0, 0.7);
+      transform: none;
+      filter: grayscale(0.4) brightness(0.9);
+    }
+
+    .door-inside {
+      position: absolute;
+      inset: 6px;
+      border-radius: 10px;
+      background:
+        radial-gradient(circle at top, #54311c 0%, #2b1208 50%, #140807 100%);
+      box-shadow:
+        inset 0 0 18px rgba(0, 0, 0, 0.95),
+        0 0 12px rgba(0, 0, 0, 0.9);
+      z-index: -1;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: #f3d9b9;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal {
+      background: radial-gradient(circle at top, #4a1b16 0%, #260d0b 45%, #140807 100%);
+      border-radius: 18px;
+      max-width: 520px;
+      width: 100%;
+      padding: 22px 22px 18px;
+      box-shadow:
+        0 20px 42px rgba(0, 0, 0, 0.98),
+        0 0 24px rgba(255, 221, 170, 0.45);
+      position: relative;
+      border: 1px solid rgba(255, 215, 160, 0.8);
+      color: #f8e8cf;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      color: #ffe9c6;
+      margin-bottom: 4px;
+    }
+
+    .modal-subtitle {
+      font-size: 13px;
+      color: #f6d2a0;
+      margin-bottom: 8px;
+      opacity: 0.95;
+    }
+
+    .modal-quote {
+      font-size: 12px;
+      color: #f0c9a5;
+      font-style: italic;
+      margin-bottom: 10px;
+      border-left: 2px solid rgba(255, 215, 160, 0.8);
+      padding-left: 8px;
+    }
+
+    .modal-body {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #f8e8cf;
+      line-height: 1.6;
+    }
+
+    .modal-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .email-btn {
+      border: none;
+      background: linear-gradient(135deg, #f4c66c, #ffeab8);
+      color: #2d1307;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.7),
+        0 0 14px rgba(255, 230, 180, 0.6);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .email-btn:hover {
+      box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.98),
+        0 0 18px rgba(255, 230, 180, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .close-btn {
+      border: none;
+      background: #72321e;
+      color: #f9e1c7;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 7px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: #ffffffdd;
+      font-size: 12px;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(110vh); }
+    }
+
+    .admin-toggle {
+      position: fixed;
+      top: 8px;
+      right: 10px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 1100;
+    }
+
+    .admin-toggle-indicator {
+      position: fixed;
+      top: 30px;
+      right: 14px;
+      font-size: 10px;
+      color: #f6d9b7;
+      opacity: 0.85;
+      font-style: italic;
+      display: none;
+      z-index: 1101;
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h2 class="login-title" id="loginTitle">VikingLuck · VIP Login</h2>
+      <p class="login-sub" id="loginSub">
+        Please login with manager code and password.
+      </p>
+
+      <label class="login-label" id="loginLabelUser">Manager code</label>
+      <input id="managerCode" type="text" class="login-input" placeholder="Enter manager code" />
+
+      <label class="login-label" id="loginLabelPass">Password</label>
+      <input id="password" type="password" class="login-input" placeholder="Enter password" />
+
+      <button class="login-btn" id="loginButton" onclick="login()">Login</button>
+
+      <p id="loginError" class="login-error">Invalid login details</p>
+    </div>
+  </div>
+
+  <div id="snow"></div>
+
+  <button class="admin-toggle" id="adminToggle" title="Admin"></button>
+  <div class="admin-toggle-indicator" id="adminIndicator">
+    Testmodus aktiv
+  </div>
+
+  <div class="page" id="calendarPage" style="display:none;">
+    <header class="header">
+      <div class="brand" id="brandText">VikingLuck · VIP Adventskalender</div>
+      <h1 class="title" id="titleText">24 Tage · 24 exklusive Angebote</h1>
+      <p class="subtitle" id="subtitleText">
+        Standard: Türen öffnen sich im Dezember am jeweiligen Kalendertag – über Admin-Passwort kannst du den Testmodus aktivieren.
+      </p>
+    </header>
+
+    <div class="settings-bar">
+      <button id="langToggle" class="toggle-btn" style="display:none;"></button>
+    </div>
+
+    <main>
+      <section class="calendar" id="calendar"></section>
+      <p class="footer-note" id="footerNoteText">
+        Im Live-Betrieb gilt: Jedes Angebot ist streng an seinen Kalendertag gebunden. Im Testmodus sind alle Türen freigeschaltet.
+      </p>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <p class="modal-quote" id="modalQuote"></p>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <script>
+    // Initialsprache (Login auf Englisch)
+    let userLanguage = "en";
+
+    const calendarEl = document.getElementById("calendar");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+    const modalQuote = document.getElementById("modalQuote");
+    const modalBody = document.getElementById("modalBody");
+    const modalActions = document.getElementById("modalActions");
+
+    const adminToggle = document.getElementById("adminToggle");
+    const adminIndicator = document.getElementById("adminIndicator");
+
+    const langToggleBtn = document.getElementById("langToggle");
+
+    let testMode = false;
+    const doorEntries = [];
+    const today = new Date();
+    const year = today.getFullYear();
+
+    // aktiver Manager (Config-Objekt)
+    let activeManager = null;
+    let currentManagerCode = null; // <- wird für Betreff genutzt
+
+    /* ------------------------------------------
+       FINAL MANAGER KONFIGURATION
+    -------------------------------------------*/
+    const managerConfig = {
+      "3004": { pw: "6825", lang: "de" },                      // Colin
+      "6825": { pw: "3004", lang: "de" },                      // Andre
+      "3050": { pw: "2264", lang: "it", secondLang: "en" },    // Andrea
+      "2264": { pw: "3050", lang: "es", secondLang: "en" },    // David
+      "1337": { pw: "7356", lang: "de" },                      // Fillippo
+      "1348": { pw: "1337", lang: "fr", secondLang: "en" },    // Geoffrey
+      "3340": { pw: "7491", lang: "es", secondLang: "en" },    // Juan
+      "2338": { pw: "4921", lang: "de" },                      // Lyndon
+      "3335": { pw: "9729", lang: "en" },                      // Matthew
+      "3462": { pw: "6699", lang: "es", secondLang: "en" }     // Yahya
+    };
+
+    /* ---------------- Angebote DE ---------------- */
+    const offersDe = [
+      {
+        day: 1,
+        title: "100€ Bonus – starker Auftakt",
+        subtitle: "Wer ernst spielt, startet nicht mit Kleingeld.",
+        quote: "Guter Dezember beginnt nicht mit Hoffnung, sondern mit Balance.",
+        bodyHtml: `
+          <p>Zum 1. Dezember gibt es einen klaren Einstieg:</p>
+          <ul>
+            <li>Fester Bonus: <strong>100€</strong></li>
+            <li>Umsatzbedingungen: <strong>5x</strong></li>
+            <li>Gültig als einmaliges Angebot zum Start des Kalenders</li>
+          </ul>
+        `,
+        emailText: "100€ Bonus mit 5x Umsatz für den Adventsstart."
+      },
+      {
+        day: 2,
+        title: "50% Einzahlungsbonus bis 250€",
+        subtitle: "Du zahlst ein – VikingLuck verstärkt den Hebel.",
+        quote: "Einzahlung ohne Bonus ist wie Angriff ohne Munition.",
+        bodyHtml: `
+          <p>Am 2. Dezember sicherst du dir einen klassischen Reload:</p>
+          <ul>
+            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
+            <li>Maximaler Bonusbetrag: <strong>250€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50% Einzahlungsbonus bis 250€ mit 3x Umsatz."
+      },
+      {
+        day: 3,
+        title: "75% Cashback auf die erste Einzahlung",
+        subtitle: "Aggressiv spielen, ohne komplett ins Risiko zu gehen.",
+        quote: "Wer Risiko nimmt, verdient auch eine Absicherung.",
+        bodyHtml: `
+          <p>Dein Schutzschirm für den 3. Dezember:</p>
+          <ul>
+            <li><strong>75% Cashback</strong> auf deine erste qualifizierende Einzahlung des Tages</li>
+            <li>Gültig, falls dein Spieltag insgesamt im Minus endet</li>
+            <li>Cashback gemäß VIP-Bedingungen, interne Abrechnung nach Ende des Tages</li>
+          </ul>
+        `,
+        emailText: "75% Cashback auf die erste Einzahlung des Tages, falls der Tag negativ endet."
+      },
+      {
+        day: 4,
+        title: "50€ Freiwette oder 50€ Casino-Bonus",
+        subtitle: "Sport oder Casino – entscheidend ist, dass du spielst.",
+        quote: "Keine Ausreden: du wählst die Arena, wir stellen den Einsatz.",
+        bodyHtml: `
+          <p>Am 4. Dezember hast du die Wahl:</p>
+          <ul>
+            <li><strong>50€ Freiwette</strong> im Sportsbook ODER</li>
+            <li><strong>50€ Casino-Bonus</strong> mit <strong>3x</strong> Umsatzbedingungen</li>
+            <li>Nur eine der beiden Optionen kann aktiviert werden</li>
+          </ul>
+        `,
+        emailText: "Wahl zwischen 50€ Freiwette im Sportsbook oder 50€ Casino-Bonus mit 3x Umsatz."
+      },
+      {
+        day: 5,
+        title: "Wochenend-Bonuspaket",
+        subtitle: "Wochenende ist nicht zum Zuschauen da.",
+        quote: "Wenn andere aufgeben, baust du Volumen auf.",
+        bodyHtml: `
+          <p>Zum Wochenende gibt es ein kombiniertes Paket:</p>
+          <ul>
+            <li><strong>100€ Bonus</strong> mit <strong>3x</strong> Umsatz</li>
+            <li><strong>40% Cashback</strong> auf Nettoverluste über das gesamte Wochenende</li>
+            <li>Maximaler Cashback-Betrag: <strong>500€</strong>, Cashback mit <strong>1x</strong> Umsatz</li>
+          </ul>
+        `,
+        emailText: "Wochenendpaket mit 100€ Bonus (3x) und 40% Cashback bis 500€ (1x)."
+      },
+      {
+        day: 6,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Wer Tickets sammelt, redet später nicht von Pech.",
+        quote: "Mehr Tickets, mehr Ziehungen, weniger Ausreden.",
+        bodyHtml: `
+          <p>Am 6. Dezember erhältst du zusätzlichen Kampagnen-Vorteil:</p>
+          <ul>
+            <li><strong>5 zusätzliche Tickets</strong> für die laufende Ticketkampagne</li>
+            <li>Gutschrift direkt auf dein Kampagnenkonto</li>
+          </ul>
+        `,
+        emailText: "5 zusätzliche Tickets für die laufende Ticketkampagne."
+      },
+      {
+        day: 7,
+        title: "5% Monatscashback Dezember",
+        subtitle: "Kompletter Monat mit Sicherheitsnetz.",
+        quote: "Du setzt durch – wir drehen am Ende die Bilanz ein Stück zurück.",
+        bodyHtml: `
+          <p>Mit Tür 7 sicherst du dir eine Monatsabsicherung:</p>
+          <ul>
+            <li><strong>5% Cashback</strong> auf deine Nettoverluste im Dezember</li>
+            <li>Abrechnung nach Monatsende gemäß VIP-Regelung</li>
+          </ul>
+        `,
+        emailText: "5% Monatscashback auf alle Nettoverluste im Dezember."
+      },
+      {
+        day: 8,
+        title: "50€ Bonus",
+        subtitle: "Kleine Erinnerung: du bist hier nicht zum Zusehen.",
+        quote: "Wer nicht nachlädt, verliert automatisch.",
+        bodyHtml: `
+          <p>Zum 8. Dezember gibt es einen klaren Zwischenboost:</p>
+          <ul>
+            <li>Fester Bonus: <strong>50€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50€ fester Bonus mit 3x Umsatz."
+      },
+      {
+        day: 9,
+        title: "50% Einzahlungsbonus bis 150€",
+        subtitle: "Mehr Einsatzkraft für ernsthafte Sessions.",
+        quote: "Du kannst tight spielen – aber nicht mit leerem Tank.",
+        bodyHtml: `
+          <p>Am 9. Dezember gilt:</p>
+          <ul>
+            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
+            <li>Maximaler Bonusbetrag: <strong>150€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50% Einzahlungsbonus bis 150€ mit 3x Umsatz."
+      },
+      {
+        day: 10,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Du willst oben mitreden? Sammel Tickets.",
+        quote: "Jackpots gewinnt nicht der, der zuschaut.",
+        bodyHtml: `
+          <p>Am 10. Dezember:</p>
+          <ul>
+            <li><strong>5 weitere Tickets</strong> für die Ticketkampagne</li>
+            <li>Ideal zum Aufbau deines Ticketvolumens</li>
+          </ul>
+        `,
+        emailText: "5 weitere Tickets für die Ticketkampagne."
+      },
+      {
+        day: 11,
+        title: "50€ Cashback Fixbetrag",
+        subtitle: "Falls der Tag hässlich läuft, fangen wir mit auf.",
+        quote: "Nicht jeder Tag wird gut – aber du musst ihn nicht allein tragen.",
+        bodyHtml: `
+          <p>Am 11. Dezember:</p>
+          <ul>
+            <li>Fixer Cashback-Betrag: <strong>50€</strong></li>
+            <li>Gültig, wenn dein Tagessaldo negativ ist</li>
+            <li>Cashback mit <strong>1x</strong> Umsatz</li>
+          </ul>
+        `,
+        emailText: "50€ fixer Cashback bei negativem Tagessaldo (1x Umsatz)."
+      },
+      {
+        day: 12,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Kontinuierlich Tickets sammeln = langfristig ernsthaft spielen.",
+        quote: "Wer dranbleibt, braucht weniger Glück.",
+        bodyHtml: `
+          <p>Am 12. Dezember:</p>
+          <ul>
+            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
+          </ul>
+        `,
+        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+      },
+      {
+        day: 13,
+        title: "50% Cashback bis 150€",
+        subtitle: "Aggressiver Tag mit sauberer Absicherung.",
+        quote: "Druck machen ist okay – solange jemand dein Netz hält.",
+        bodyHtml: `
+          <p>Der 13. Dezember bringt dir:</p>
+          <ul>
+            <li><strong>50% Cashback</strong> auf deine Nettoverluste des Tages</li>
+            <li>Maximaler Cashback-Betrag: <strong>150€</strong></li>
+            <li>Cashback mit <strong>1x</strong> Umsatz</li>
+          </ul>
+        `,
+        emailText: "50% Cashback auf Nettoverluste des Tages bis 150€ (1x Umsatz)."
+      },
+      {
+        day: 14,
+        title: "50€ Bonus",
+        subtitle: "Solider Reload für den nächsten Schlag.",
+        quote: "Balance ist dein Werkzeug, nicht dein Ziel.",
+        bodyHtml: `
+          <p>Am 14. Dezember:</p>
+          <ul>
+            <li>Fester Bonus: <strong>50€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50€ Bonus mit 3x Umsatz."
+      },
+      {
+        day: 15,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Mehr Volumen, weniger Zufall.",
+        quote: "Du kannst den Ausgang nicht kontrollieren – aber deine Chancen schon.",
+        bodyHtml: `
+          <p>Zum 15. Dezember:</p>
+          <ul>
+            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
+          </ul>
+        `,
+        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+      },
+      {
+        day: 16,
+        title: "50% Einzahlungsbonus bis 100€",
+        subtitle: "Sauberer Reload, kontrolliertes Volumen.",
+        quote: "Du musst nicht maximal einzahlen – nur maximal klug.",
+        bodyHtml: `
+          <p>Am 16. Dezember:</p>
+          <ul>
+            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
+            <li>Maximaler Bonusbetrag: <strong>100€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50% Einzahlungsbonus bis 100€ mit 3x Umsatz."
+      },
+      {
+        day: 17,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Kurz vor Weihnachts-Endspurt nochmal Tickets stapeln.",
+        quote: "Wer bis hierhin durchzieht, baut jetzt den Vorteil aus.",
+        bodyHtml: `
+          <p>Am 17. Dezember:</p>
+          <ul>
+            <li><strong>5 Tickets</strong> für die Ticketkampagne</li>
+          </ul>
+        `,
+        emailText: "5 Tickets für die Ticketkampagne."
+      },
+      {
+        day: 18,
+        title: "50€ Bonus",
+        subtitle: "Ruhiger, aber klarer Boost vor den hohen Tagen.",
+        quote: "Stabilität vor dem Peak macht den Unterschied.",
+        bodyHtml: `
+          <p>Am 18. Dezember:</p>
+          <ul>
+            <li>Fester Bonus: <strong>50€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50€ Bonus mit 3x Umsatz."
+      },
+      {
+        day: 19,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Letzter Aufbau, bevor die wirklich großen Tage kommen.",
+        quote: "Wenn du jetzt nicht sammelst, sammelst du nie.",
+        bodyHtml: `
+          <p>Der 19. Dezember bringt dir:</p>
+          <ul>
+            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
+          </ul>
+        `,
+        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+      },
+      {
+        day: 20,
+        title: "50% Einzahlungsbonus bis 150€",
+        subtitle: "Kurz vor Weihnachten wird der Einsatz noch einmal erhöht.",
+        quote: "Wer an den Feiertagen gewinnen will, bereitet den Stack vorher vor.",
+        bodyHtml: `
+          <p>Am 20. Dezember:</p>
+          <ul>
+            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
+            <li>Maximaler Bonusbetrag: <strong>150€</strong></li>
+            <li>Umsatzbedingungen: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "50% Einzahlungsbonus bis 150€ mit 3x Umsatz."
+      },
+      {
+        day: 21,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Kurz vor Schluss noch einmal Tickets sichern.",
+        quote: "Wenn du dranbleibst, brauchst du weniger Wunder an Heiligabend.",
+        bodyHtml: `
+          <p>Am 21. Dezember:</p>
+          <ul>
+            <li><strong>5 Tickets</strong> für die Ticketkampagne</li>
+          </ul>
+        `,
+        emailText: "5 Tickets für die Ticketkampagne."
+      },
+      {
+        day: 22,
+        title: "60% Cashback auf die erste Einzahlung",
+        subtitle: "Aggressiver Push – aber mit echtem Fallschirm.",
+        quote: "Aufdrehen ist erlaubt, solange du weich landest.",
+        bodyHtml: `
+          <p>Am 22. Dezember steht Sicherheit im Fokus:</p>
+          <ul>
+            <li><strong>60% Cashback</strong> auf deine erste qualifizierende Einzahlung des Tages</li>
+            <li>Gültig, wenn der Tag insgesamt im Minus endet</li>
+            <li>Cashback mit <strong>1x</strong> Umsatz</li>
+          </ul>
+        `,
+        emailText: "60% Cashback auf die erste qualifizierende Einzahlung des Tages (1x Umsatz)."
+      },
+      {
+        day: 23,
+        title: "5 Tickets für die Ticketkampagne",
+        subtitle: "Letzte Ticket-Welle vor Heiligabend.",
+        quote: "Heute sammelst du – morgen beschwerst du dich nicht.",
+        bodyHtml: `
+          <p>Am 23. Dezember:</p>
+          <ul>
+            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
+          </ul>
+        `,
+        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+      },
+      {
+        day: 24,
+        title: "Weihnachtsbonus 500€",
+        subtitle: "Heiligabend ist kein Tag für kleine Limits.",
+        quote: "Wenn du an Weihnachten nichts riskierst, brauchst du im Januar nicht über Glück reden.",
+        bodyHtml: `
+          <p>Zum 24. Dezember gibt es das Highlight des Kalenders:</p>
+          <ul>
+            <li>Fester Weihnachtsbonus: <strong>500€</strong></li>
+            <li>Umsatzbedingungen gemäß individueller VIP-Abstimmung</li>
+            <li>Nur am 24. Dezember im Live-Betrieb aktivierbar</li>
+          </ul>
+        `,
+        emailText: "Weihnachtsbonus in Höhe von 500€ gemäß individueller VIP-Abstimmung."
+      }
+    ];
+
+    /* ---------------- Angebote ES ---------------- */
+    const offersEs = [
+      {
+        day: 1,
+        title: "Bono de 100€ – inicio fuerte",
+        subtitle: "Quien juega en serio no empieza con poco saldo.",
+        quote: "Un buen diciembre no empieza con esperanza, sino con balance.",
+        bodyHtml: `
+          <p>Para el 1 de diciembre tienes un inicio claro:</p>
+          <ul>
+            <li>Bono fijo: <strong>100€</strong></li>
+            <li>Requisitos de apuesta: <strong>5x</strong></li>
+            <li>Válido como oferta única para el inicio del calendario</li>
+          </ul>
+        `,
+        emailText: "Bono de 100€ con rollover 5x para el inicio del Adviento."
+      },
+      {
+        day: 2,
+        title: "50% de bono hasta 250€",
+        subtitle: "Tú depositas – VikingLuck aumenta el efecto.",
+        quote: "Depositar sin bono es como atacar sin munición.",
+        bodyHtml: `
+          <p>El 2 de diciembre aseguras un clásico reload:</p>
+          <ul>
+            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
+            <li>Importe máximo de bono: <strong>250€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono de depósito del 50% hasta 250€ con rollover 3x."
+      },
+      {
+        day: 3,
+        title: "75% de cashback sobre el primer depósito",
+        subtitle: "Juego agresivo sin asumir todo el riesgo.",
+        quote: "Quien asume riesgo también merece cobertura.",
+        bodyHtml: `
+          <p>Tu protección para el 3 de diciembre:</p>
+          <ul>
+            <li><strong>75% de cashback</strong> sobre tu primer depósito cualificado del día</li>
+            <li>Válido si el día termina en negativo</li>
+            <li>Cashback según las condiciones VIP, abonado tras el cierre del día</li>
+          </ul>
+        `,
+        emailText: "75% de cashback sobre el primer depósito del día si el resultado es negativo."
+      },
+      {
+        day: 4,
+        title: "Apuesta gratuita de 50€ o bono casino de 50€",
+        subtitle: "Deporte o casino – lo importante es que juegues.",
+        quote: "Sin excusas: eliges la arena, nosotros ponemos la ficha.",
+        bodyHtml: `
+          <p>El 4 de diciembre tienes la elección:</p>
+          <ul>
+            <li><strong>Apuesta gratuita de 50€</strong> en Sportsbook O</li>
+            <li><strong>Bono casino de 50€</strong> con requisitos de apuesta de <strong>3x</strong></li>
+            <li>Solo se puede activar una de las opciones</li>
+          </ul>
+        `,
+        emailText: "Elección entre apuesta gratuita de 50€ en Sportsbook o bono casino de 50€ con rollover 3x."
+      },
+      {
+        day: 5,
+        title: "Paquete de fin de semana",
+        subtitle: "El fin de semana no es para mirar desde fuera.",
+        quote: "Cuando otros se rinden, tú construyes volumen.",
+        bodyHtml: `
+          <p>Para el fin de semana hay un paquete combinado:</p>
+          <ul>
+            <li><strong>Bono de 100€</strong> con rollover 3x</li>
+            <li><strong>40% de cashback</strong> sobre pérdidas netas durante todo el fin de semana</li>
+            <li>Cashback máximo: <strong>500€</strong>, cashback con rollover <strong>1x</strong></li>
+          </ul>
+        `,
+        emailText: "Paquete de fin de semana con bono de 100€ (3x) y 40% de cashback hasta 500€ (1x)."
+      },
+      {
+        day: 6,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Quien colecciona tickets no habla luego de mala suerte.",
+        quote: "Más tickets, más sorteos, menos excusas.",
+        bodyHtml: `
+          <p>El 6 de diciembre recibes ventaja adicional en la campaña:</p>
+          <ul>
+            <li><strong>5 tickets extra</strong> para la campaña de tickets activa</li>
+            <li>Abono directo en tu saldo de campaña</li>
+          </ul>
+        `,
+        emailText: "5 tickets extra para la campaña de tickets activa."
+      },
+      {
+        day: 7,
+        title: "5% de cashback mensual en diciembre",
+        subtitle: "Un mes completo con red de seguridad.",
+        quote: "Tú sigues jugando – nosotros corregimos un poco el resultado al final.",
+        bodyHtml: `
+          <p>Con la puerta 7 aseguras un cashback mensual:</p>
+          <ul>
+            <li><strong>5% de cashback</strong> sobre tus pérdidas netas en diciembre</li>
+            <li>Liquidación al final del mes según reglas VIP</li>
+          </ul>
+        `,
+        emailText: "5% de cashback mensual sobre todas las pérdidas netas de diciembre."
+      },
+      {
+        day: 8,
+        title: "Bono de 50€",
+        subtitle: "Un recordatorio: no estás aquí para mirar.",
+        quote: "Quien no recarga, pierde automáticamente.",
+        bodyHtml: `
+          <p>El 8 de diciembre hay un claro impulso intermedio:</p>
+          <ul>
+            <li>Bono fijo: <strong>50€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono fijo de 50€ con rollover 3x."
+      },
+      {
+        day: 9,
+        title: "50% de bono hasta 150€",
+        subtitle: "Más potencia para sesiones serias.",
+        quote: "Puedes jugar tight – pero no con el tanque vacío.",
+        bodyHtml: `
+          <p>El 9 de diciembre:</p>
+          <ul>
+            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
+            <li>Importe máximo de bono: <strong>150€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono del 50% hasta 150€ con rollover 3x."
+      },
+      {
+        day: 10,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Si quieres estar arriba, colecciona tickets.",
+        quote: "Los jackpots no los gana quien solo mira.",
+        bodyHtml: `
+          <p>El 10 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets adicionales</strong> para la campaña de tickets</li>
+            <li>Ideal para ampliar tu volumen de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets adicionales para la campaña de tickets."
+      },
+      {
+        day: 11,
+        title: "Cashback fijo de 50€",
+        subtitle: "Si el día sale feo, te apoyamos.",
+        quote: "No todos los días son buenos – pero no tienes que cargarlos solo.",
+        bodyHtml: `
+          <p>El 11 de diciembre:</p>
+          <ul>
+            <li>Cashback fijo: <strong>50€</strong></li>
+            <li>Válido si el resultado diario es negativo</li>
+            <li>Cashback con rollover <strong>1x</strong></li>
+          </ul>
+        `,
+        emailText: "Cashback fijo de 50€ con resultado diario negativo (1x)."
+      },
+      {
+        day: 12,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Coleccionar de forma constante = jugar en serio a largo plazo.",
+        quote: "Quien se mantiene constante necesita menos suerte.",
+        bodyHtml: `
+          <p>El 12 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets extra para la campaña de tickets."
+      },
+      {
+        day: 13,
+        title: "50% de cashback hasta 150€",
+        subtitle: "Día agresivo con buena cobertura.",
+        quote: "Meter presión está bien – mientras alguien sujete la red.",
+        bodyHtml: `
+          <p>El 13 de diciembre te trae:</p>
+          <ul>
+            <li><strong>50% de cashback</strong> sobre tus pérdidas netas del día</li>
+            <li>Cashback máximo: <strong>150€</strong></li>
+            <li>Cashback con rollover <strong>1x</strong></li>
+          </ul>
+        `,
+        emailText: "50% de cashback sobre pérdidas netas del día hasta 150€ (1x)."
+      },
+      {
+        day: 14,
+        title: "Bono de 50€",
+        subtitle: "Un reload sólido para el siguiente golpe.",
+        quote: "El balance es tu herramienta, no tu objetivo.",
+        bodyHtml: `
+          <p>El 14 de diciembre:</p>
+          <ul>
+            <li>Bono fijo: <strong>50€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono de 50€ con rollover 3x."
+      },
+      {
+        day: 15,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Más volumen, menos azar.",
+        quote: "No puedes controlar el resultado, pero sí tus oportunidades.",
+        bodyHtml: `
+          <p>El 15 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets extra para la campaña de tickets."
+      },
+      {
+        day: 16,
+        title: "50% de bono hasta 100€",
+        subtitle: "Reload limpio, volumen controlado.",
+        quote: "No tienes que depositar al máximo – solo hacerlo con cabeza.",
+        bodyHtml: `
+          <p>El 16 de diciembre:</p>
+          <ul>
+            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
+            <li>Importe máximo de bono: <strong>100€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono del 50% hasta 100€ con rollover 3x."
+      },
+      {
+        day: 17,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Antes del sprint final de Navidad, más tickets.",
+        quote: "Quien ha llegado hasta aquí, ahora amplía su ventaja.",
+        bodyHtml: `
+          <p>El 17 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets</strong> para la campaña de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets para la campaña de tickets."
+      },
+      {
+        day: 18,
+        title: "Bono de 50€",
+        subtitle: "Impulso tranquilo pero claro antes de los días fuertes.",
+        quote: "La estabilidad antes del pico marca la diferencia.",
+        bodyHtml: `
+          <p>El 18 de diciembre:</p>
+          <ul>
+            <li>Bono fijo: <strong>50€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono de 50€ con rollover 3x."
+      },
+      {
+        day: 19,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Última construcción antes de los días realmente grandes.",
+        quote: "Si no coleccionas ahora, no coleccionarás nunca.",
+        bodyHtml: `
+          <p>El 19 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets extra para la campaña de tickets."
+      },
+      {
+        day: 20,
+        title: "50% de bono hasta 150€",
+        subtitle: "Antes de Navidad, se aumenta un poco el nivel.",
+        quote: "Quien quiere ganar en fiestas, prepara el stack antes.",
+        bodyHtml: `
+          <p>El 20 de diciembre:</p>
+          <ul>
+            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
+            <li>Importe máximo de bono: <strong>150€</strong></li>
+            <li>Requisitos de apuesta: <strong>3x</strong></li>
+          </ul>
+        `,
+        emailText: "Bono del 50% hasta 150€ con rollover 3x."
+      },
+      {
+        day: 21,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Antes del final, asegurar algunos tickets más.",
+        quote: "Si te mantienes, necesitas menos milagros en Nochebuena.",
+        bodyHtml: `
+          <p>El 21 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets</strong> para la campaña de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets para la campaña de tickets."
+      },
+      {
+        day: 22,
+        title: "60% de cashback sobre el primer depósito",
+        subtitle: "Empuje agresivo, pero con paracaídas real.",
+        quote: "Subir el ritmo está permitido, siempre que aterrices suave.",
+        bodyHtml: `
+          <p>El 22 de diciembre el enfoque es la seguridad:</p>
+          <ul>
+            <li><strong>60% de cashback</strong> sobre tu primer depósito cualificado del día</li>
+            <li>Válido si el día termina en negativo</li>
+            <li>Cashback con rollover <strong>1x</strong></li>
+          </ul>
+        `,
+        emailText: "60% de cashback sobre el primer depósito cualificado del día (1x)."
+      },
+      {
+        day: 23,
+        title: "5 tickets para la campaña de tickets",
+        subtitle: "Última ola de tickets antes de Nochebuena.",
+        quote: "Hoy coleccionas – mañana no te quejas.",
+        bodyHtml: `
+          <p>El 23 de diciembre:</p>
+          <ul>
+            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
+          </ul>
+        `,
+        emailText: "5 tickets extra para la campaña de tickets."
+      },
+      {
+        day: 24,
+        title: "Bono de Navidad 500€",
+        subtitle: "Nochebuena no es un día para límites pequeños.",
+        quote: "Si no arriesgas en Navidad, no hables de suerte en enero.",
+        bodyHtml: `
+          <p>El 24 de diciembre tienes el gran highlight del calendario:</p>
+          <ul>
+            <li>Bono de Navidad: <strong>500€</strong></li>
+            <li>Requisitos de apuesta según acuerdo VIP individual</li>
+            <li>Activable solo el 24 de diciembre en modo en vivo</li>
+          </ul>
+        `,
+        emailText: "Bono de Navidad de 500€ con condiciones de apuesta acordadas a nivel VIP."
+      }
+    ];
+
+    /* ---------------- Angebote EN (generisch) ---------------- */
+    const offersEn = offersDe.map(o => ({
+      day: o.day,
+      title: `Day ${o.day} – Exclusive VIP offer`,
+      subtitle: "Tailored bonus for serious play.",
+      quote: o.quote
+        ? "Different language, same rule: balance first, emotions second."
+        : "",
+      bodyHtml: `
+        <p>This door unlocks a tailored VIP offer for you based on your activity:</p>
+        <ul>
+          <li>The exact structure (bonus / cashback / tickets) is agreed directly with your VIP Manager.</li>
+          <li>Use this day as a leverage point – not as a random spin.</li>
+        </ul>
+        <p>Reply to claim the offer for day ${o.day} and we set it up according to your profile.</p>
+      `,
+      emailText: `I have just opened door ${o.day} in the VikingLuck Advent Calendar and would like to activate the VIP offer for this day, adapted to my account.`
+    }));
+
+    /* ---------------- Angebote FR (generisch) ---------------- */
+    const offersFr = offersDe.map(o => ({
+      day: o.day,
+      title: `Jour ${o.day} – Offre VIP exclusive`,
+      subtitle: "Bonus personnalisé pour un jeu sérieux.",
+      quote: o.quote
+        ? "Même principe dans une autre langue : d’abord le solde, ensuite les émotions."
+        : "",
+      bodyHtml: `
+        <p>Cette porte débloque une offre VIP sur mesure pour vous :</p>
+        <ul>
+          <li>Structure exacte (bonus / cashback / tickets) définie avec votre gestionnaire VIP.</li>
+          <li>Objectif : transformer ce jour en vrai levier, pas en simple tentative.</li>
+        </ul>
+        <p>Répondez à l’e-mail pour activer l’offre du jour ${o.day} adaptée à votre profil.</p>
+      `,
+      emailText: `Je viens d’ouvrir la porte ${o.day} du calendrier de l’Avent VikingLuck et je souhaite activer l’offre VIP pour ce jour, adaptée à mon compte.`
+    }));
+
+    /* ---------------- Angebote IT (generisch) ---------------- */
+    const offersIt = offersDe.map(o => ({
+      day: o.day,
+      title: `Giorno ${o.day} – Offerta VIP esclusiva`,
+      subtitle: "Bonus personalizzato per un gioco serio.",
+      quote: o.quote
+        ? "Stessa regola in un’altra lingua: prima il saldo, poi le emozioni."
+        : "",
+      bodyHtml: `
+        <p>Questa casella sblocca un’offerta VIP su misura per te:</p>
+        <ul>
+          <li>La struttura esatta (bonus / cashback / ticket) viene definita direttamente con il tuo VIP Manager.</li>
+          <li>Usa questo giorno come leva strategica – non come semplice tentativo casuale.</li>
+        </ul>
+        <p>Rispondi all’e-mail per attivare l’offerta del giorno ${o.day} adattata al tuo conto.</p>
+      `,
+      emailText: `Ho appena aperto la casella ${o.day} del calendario dell’Avvento VikingLuck e vorrei attivare l’offerta VIP di oggi, adattata al mio conto.`
+    }));
+
+    let offers = offersDe;
+
+    function applyLanguageTexts() {
+      const brand = document.getElementById("brandText");
+      const title = document.getElementById("titleText");
+      const subtitle = document.getElementById("subtitleText");
+      const footer = document.getElementById("footerNoteText");
+      const loginTitle = document.getElementById("loginTitle");
+      const loginSub = document.getElementById("loginSub");
+      const labelUser = document.getElementById("loginLabelUser");
+      const labelPass = document.getElementById("loginLabelPass");
+      const passInput = document.getElementById("password");
+      const codeInput = document.getElementById("managerCode");
+      const btn = document.getElementById("loginButton");
+      const err = document.getElementById("loginError");
+
+      if (userLanguage === "de") {
+        document.documentElement.lang = "de";
+        brand.textContent = "VikingLuck · VIP Adventskalender";
+        title.textContent = "24 Tage · 24 exklusive Angebote";
+        subtitle.textContent =
+          "Standard: Türen öffnen sich im Dezember am jeweiligen Kalendertag – über Admin-Passwort kannst du den Testmodus aktivieren.";
+        footer.textContent =
+          "Im Live-Betrieb gilt: Jedes Angebot ist streng an seinen Kalendertag gebunden. Im Testmodus sind alle Türen freigeschaltet.";
+
+        loginTitle.textContent = "VikingLuck · VIP Login";
+        loginSub.textContent = "Bitte mit Manager-Code und Passwort einloggen.";
+        labelUser.textContent = "Manager-Code";
+        labelPass.textContent = "Passwort";
+        codeInput.placeholder = "Manager-Code eingeben";
+        passInput.placeholder = "Passwort eingeben";
+        btn.textContent = "Login";
+        err.textContent = "Ungültige Zugangsdaten";
+      } else if (userLanguage === "es") {
+        document.documentElement.lang = "es";
+        brand.textContent = "VikingLuck · Calendario VIP de Adviento";
+        title.textContent = "24 días · 24 ofertas exclusivas";
+        subtitle.textContent =
+          "Del 1 al 24 de diciembre se abre cada día una nueva puerta con una oferta VIP personal.";
+        footer.textContent =
+          "En modo en vivo, cada oferta de Adviento está estrictamente vinculada a su día de calendario. En modo de prueba, todas las puertas están desbloqueadas.";
+
+        loginTitle.textContent = "VikingLuck · Acceso VIP";
+        loginSub.textContent = "Inicia sesión con tu código de manager y contraseña.";
+        labelUser.textContent = "Código del manager";
+        labelPass.textContent = "Contraseña";
+        codeInput.placeholder = "Introducir código del manager";
+        passInput.placeholder = "Introducir contraseña";
+        btn.textContent = "Acceder";
+        err.textContent = "Datos de acceso inválidos";
+      } else if (userLanguage === "fr") {
+        document.documentElement.lang = "fr";
+        brand.textContent = "VikingLuck · Calendrier de l'Avent VIP";
+        title.textContent = "24 jours · 24 offres exclusives";
+        subtitle.textContent =
+          "Du 1er au 24 décembre, une nouvelle porte s'ouvre chaque jour avec une offre VIP personnalisée.";
+        footer.textContent =
+          "En mode réel, chaque offre est liée à son jour de calendrier. En mode test, toutes les portes sont déverrouillées.";
+
+        loginTitle.textContent = "VikingLuck · Connexion VIP";
+        loginSub.textContent = "Connectez-vous avec le code manager et le mot de passe.";
+        labelUser.textContent = "Code manager";
+        labelPass.textContent = "Mot de passe";
+        codeInput.placeholder = "Saisir le code manager";
+        passInput.placeholder = "Saisir le mot de passe";
+        btn.textContent = "Connexion";
+        err.textContent = "Identifiants invalides";
+      } else if (userLanguage === "it") {
+        document.documentElement.lang = "it";
+        brand.textContent = "VikingLuck · Calendario VIP dell'Avvento";
+        title.textContent = "24 giorni · 24 offerte esclusive";
+        subtitle.textContent =
+          "Dal 1° al 24 dicembre si apre ogni giorno una nuova casella con un'offerta VIP personalizzata.";
+        footer.textContent =
+          "In modalità live, ogni offerta è rigidamente legata al suo giorno di calendario. In modalità test, tutte le caselle sono sbloccate.";
+
+        loginTitle.textContent = "VikingLuck · Accesso VIP";
+        loginSub.textContent = "Accedi con il codice manager e la password.";
+        labelUser.textContent = "Codice manager";
+        labelPass.textContent = "Password";
+        codeInput.placeholder = "Inserisci il codice manager";
+        passInput.placeholder = "Inserisci la password";
+        btn.textContent = "Accedi";
+        err.textContent = "Dati di accesso non validi";
+      } else {
+        document.documentElement.lang = "en";
+        brand.textContent = "VikingLuck · VIP Advent Calendar";
+        title.textContent = "24 days · 24 exclusive offers";
+        subtitle.textContent =
+          "From 1 to 24 December, a new door opens every day with a personal VIP offer.";
+        footer.textContent =
+          "In live mode, each offer is strictly bound to its calendar day. In test mode, all doors are unlocked.";
+
+        loginTitle.textContent = "VikingLuck · VIP Login";
+        loginSub.textContent = "Please log in with manager code and password.";
+        labelUser.textContent = "Manager code";
+        labelPass.textContent = "Password";
+        codeInput.placeholder = "Enter manager code";
+        passInput.placeholder = "Enter password";
+        btn.textContent = "Login";
+        err.textContent = "Invalid login details";
+      }
+    }
+
+    function setOffersForLanguage() {
+      if (userLanguage === "de") offers = offersDe;
+      else if (userLanguage === "es") offers = offersEs;
+      else if (userLanguage === "fr") offers = offersFr;
+      else if (userLanguage === "it") offers = offersIt;
+      else offers = offersEn;
+    }
+
+    function labelLanguage(code) {
+      if (!code) return "";
+      if (code === "de") return "DE";
+      if (code === "es") return "ES";
+      if (code === "fr") return "FR";
+      if (code === "it") return "IT";
+      if (code === "en") return "EN";
+      return code.toUpperCase();
+    }
+
+    function updateLanguageToggle() {
+      if (!activeManager || !activeManager.secondLang) {
+        langToggleBtn.style.display = "none";
+        return;
+      }
+
+      langToggleBtn.style.display = "inline-block";
+
+      const primary = activeManager.lang;
+      const secondary = activeManager.secondLang;
+      const currentLabel = labelLanguage(userLanguage);
+      const otherLabel = labelLanguage(userLanguage === primary ? secondary : primary);
+
+      langToggleBtn.textContent = currentLabel + " / " + otherLabel;
+    }
+
+    langToggleBtn.addEventListener("click", () => {
+      if (!activeManager || !activeManager.secondLang) return;
+      const primary = activeManager.lang;
+      const secondary = activeManager.secondLang;
+
+      userLanguage = (userLanguage === primary) ? secondary : primary;
+
+      applyLanguageTexts();
+      setOffersForLanguage();
+      renderCalendar();
+      updateDoorLockStates();
+      updateLanguageToggle();
+    });
+
+    function login() {
+      const codeRaw = document.getElementById("managerCode").value.trim();
+      const pwInput = document.getElementById("password").value.trim();
+      const err = document.getElementById("loginError");
+
+      if (!codeRaw || !pwInput) {
+        err.style.display = "block";
+        if (userLanguage === "de") {
+          err.textContent = "Bitte alle Felder ausfüllen.";
+        } else if (userLanguage === "es") {
+          err.textContent = "Por favor, completa todos los campos.";
+        } else if (userLanguage === "fr") {
+          err.textContent = "Veuillez remplir tous les champs.";
+        } else if (userLanguage === "it") {
+          err.textContent = "Per favore compila tutti i campi.";
+        } else {
+          err.textContent = "Please fill in all fields.";
+        }
+        return;
+      }
+
+      const config = managerConfig[codeRaw];
+
+      if (!config || pwInput !== config.pw) {
+        err.style.display = "block";
+        if (userLanguage === "de") {
+          err.textContent = "Ungültige Zugangsdaten";
+        } else if (userLanguage === "es") {
+          err.textContent = "Datos de acceso inválidos";
+        } else if (userLanguage === "fr") {
+          err.textContent = "Identifiants invalides";
+        } else if (userLanguage === "it") {
+          err.textContent = "Dati di accesso non validi";
+        } else {
+          err.textContent = "Invalid login details";
+        }
+        return;
+      }
+
+      err.style.display = "none";
+
+      activeManager = config;
+      currentManagerCode = codeRaw; // <- wird später im Betreff verwendet
+      userLanguage = config.lang;
+
+      document.getElementById("loginScreen").style.display = "none";
+      document.getElementById("calendarPage").style.display = "block";
+
+      applyLanguageTexts();
+      setOffersForLanguage();
+      renderCalendar();
+      updateDoorLockStates();
+      createSnow();
+      updateLanguageToggle();
+    }
+
+    function createSnow() {
+      const snowContainer = document.getElementById("snow");
+      snowContainer.innerHTML = "";
+      for (let i = 0; i < 70; i++) {
+        const el = document.createElement("div");
+        el.className = "snowflake";
+        el.textContent = "•";
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.animationDuration = 5 + Math.random() * 7 + "s";
+        el.style.animationDelay = Math.random() * 5 + "s";
+        el.style.fontSize = 8 + Math.random() * 14 + "px";
+        snowContainer.appendChild(el);
+      }
+    }
+
+    function renderCalendar() {
+      calendarEl.innerHTML = "";
+      doorEntries.length = 0;
+
+      offers.forEach((offer) => {
+        const door = document.createElement("article");
+        door.className = "door";
+        if (offer.day === 1 || offer.day === 5 || offer.day === 24) {
+          door.classList.add("door-special");
+        }
+
+        const inner = document.createElement("div");
+        inner.className = "door-inner";
+        inner.innerHTML = `<div class="door-number">${offer.day}</div>`;
+
+        const inside = document.createElement("div");
+        inside.className = "door-inside";
+
+        const liveDate = new Date(year, 11, offer.day); // Dezember
+
+        inner.addEventListener("click", () => {
+          if (door.classList.contains("locked")) return;
+          inner.classList.add("opened");
+          openModal(offer, inner);
+        });
+
+        door.appendChild(inner);
+        door.appendChild(inside);
+        calendarEl.appendChild(door);
+
+        doorEntries.push({ door, inner, liveDate });
+      });
+    }
+
+    function updateDoorLockStates() {
+      doorEntries.forEach(({ door, liveDate }) => {
+        if (testMode) {
+          door.classList.remove("locked");
+        } else {
+          if (today < liveDate) {
+            door.classList.add("locked");
+          } else {
+            door.classList.remove("locked");
+          }
+        }
+      });
+    }
+
+    function adjustCurrency(text) {
+      // Placeholder – aktuell keine Währungsswitch-Logik
+      return text || "";
+    }
+
+    function openModal(offer, innerEl) {
+      modalTitle.textContent = adjustCurrency(offer.title);
+      modalSubtitle.textContent = offer.subtitle || "";
+      modalQuote.textContent = offer.quote || "";
+      modalQuote.style.display = offer.quote ? "block" : "none";
+      modalBody.innerHTML = adjustCurrency(offer.bodyHtml || "");
+
+      let subject, greeting, lineOffer, closing, emailBtnLabel, closeLabel, labelOffer;
+
+      // SUBJECT + Manager-Code im Betreff
+      const codeSuffix = currentManagerCode ? " · Code " + currentManagerCode : "";
+
+      if (userLanguage === "es") {
+        subject = "VikingLuck – Puerta " + offer.day + " abierta" + codeSuffix;
+        greeting = "Buenos días,";
+        lineOffer = "acabo de abrir la puerta " + offer.day + " en mi calendario de Adviento de VikingLuck.";
+        closing = "Por favor, activad esta oferta de Adviento para mi cuenta.\n\nMuchas gracias.";
+        emailBtnLabel = "Enviar oferta por correo";
+        closeLabel = "Cerrar";
+        labelOffer = "Oferta:";
+      } else if (userLanguage === "fr") {
+        subject = "VikingLuck – Porte " + offer.day + " ouverte" + codeSuffix;
+        greeting = "Bonjour,";
+        lineOffer = "je viens d'ouvrir la porte " + offer.day + " dans le calendrier de l'Avent VikingLuck.";
+        closing = "Merci d'activer cette offre de l'Avent pour mon compte.\n\nMerci beaucoup.";
+        emailBtnLabel = "Envoyer l'offre par e-mail";
+        closeLabel = "Fermer";
+        labelOffer = "Offre :";
+      } else if (userLanguage === "it") {
+        subject = "VikingLuck – Casella " + offer.day + " aperta" + codeSuffix;
+        greeting = "Buongiorno,";
+        lineOffer = "ho appena aperto la casella " + offer.day + " nel calendario dell’Avvento di VikingLuck.";
+        closing = "Vi prego di attivare questa offerta dell’Avvento per il mio conto.\n\nGrazie mille.";
+        emailBtnLabel = "Invia offerta via e-mail";
+        closeLabel = "Chiudi";
+        labelOffer = "Offerta:";
+      } else if (userLanguage === "en") {
+        subject = "VikingLuck – Door " + offer.day + " opened" + codeSuffix;
+        greeting = "Good morning,";
+        lineOffer = "I have just opened door " + offer.day + " in the VikingLuck Advent Calendar.";
+        closing = "Please activate this Advent offer for my account.\n\nThank you.";
+        emailBtnLabel = "Send offer by email";
+        closeLabel = "Close";
+        labelOffer = "Offer:";
+      } else {
+        subject = "VikingLuck – Tür " + offer.day + " geöffnet" + codeSuffix;
+        greeting = "Guten Morgen,";
+        lineOffer = "ich öffne gerade Tür " + offer.day + " im VikingLuck Adventskalender.";
+        closing = "Bitte das Angebot für mich aktivieren.\n\nVielen Dank.";
+        emailBtnLabel = "Angebot per E-Mail senden";
+        closeLabel = "Schließen";
+        labelOffer = "Angebot:";
+      }
+
+      const emailOfferLine = adjustCurrency(offer.emailText || "");
+
+      const bodyText = encodeURIComponent(
+        greeting + "\n\n" +
+        lineOffer + "\n\n" +
+        labelOffer + "\n" + emailOfferLine + "\n\n" +
+        closing
+      );
+
+      const mailtoHref =
+        "mailto:vipteam@vikingluck.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        bodyText;
+
+      modalActions.innerHTML = `
+        <a class="email-btn" href="${mailtoHref}">
+          ${emailBtnLabel}
+        </a>
+        <button class="close-btn" type="button" onclick="closeModal()">
+          ${closeLabel}
+        </button>
+      `;
+
+      modalBackdrop.style.display = "flex";
+      modalBackdrop._lastInner = innerEl || null;
+    }
+
+    function closeModal() {
+      modalBackdrop.style.display = "none";
+      if (modalBackdrop._lastInner) {
+        modalBackdrop._lastInner.classList.remove("opened");
+        modalBackdrop._lastInner = null;
+      }
+    }
+
+    modalBackdrop.addEventListener("click", (e) => {
+      if (e.target === modalBackdrop) {
+        closeModal();
+      }
+    });
+
+    adminToggle.addEventListener("click", () => {
+      const pw = prompt("Admin-Passwort eingeben:");
+      if (pw === null) return;
+      if (pw === "676767") {
+        testMode = !testMode;
+        updateDoorLockStates();
+        if (testMode) {
+          adminIndicator.style.display = "block";
+        } else {
+          adminIndicator.style.display = "none";
+        }
+      } else {
+        alert("Falsches Passwort.");
+      }
+    });
+
+    // Initial nur Login-Texte auf Basis Standard-Sprache
+    applyLanguageTexts();
+  </script>
+</body>
+</html>
