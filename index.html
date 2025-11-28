@@ -15,9 +15,9 @@
     body {
       font-family: Georgia, "Times New Roman", serif;
 
-      /* FINAL VikingLuck Christmas Background */
+      /* VIKINGLUCK Christmas Background – Braun/Gold + PNG */
       background:
-        linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.80)),
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)),
         url("https://i.postimg.cc/RFNn3Qky/Untitled-design.png")
           no-repeat center center fixed;
 
@@ -36,11 +36,11 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 10%, rgba(255, 230, 180, 0.08) 0, transparent 55%),
-        radial-gradient(circle at 80% 0, rgba(255, 255, 255, 0.05) 0, transparent 60%),
-        radial-gradient(circle at 10% 70%, rgba(200, 60, 40, 0.18) 0, transparent 55%),
-        radial-gradient(circle at 90% 80%, rgba(240, 200, 120, 0.14) 0, transparent 60%);
-      opacity: 0.7;
+        radial-gradient(circle at 20% 10%, rgba(255, 230, 180, 0.12) 0, transparent 55%),
+        radial-gradient(circle at 80% 0, rgba(212, 175, 55, 0.14) 0, transparent 60%),
+        radial-gradient(circle at 10% 70%, rgba(90, 55, 30, 0.28) 0, transparent 55%),
+        radial-gradient(circle at 90% 80%, rgba(140, 90, 40, 0.22) 0, transparent 60%);
+      opacity: 0.75;
       pointer-events: none;
       z-index: -1;
     }
@@ -57,14 +57,14 @@
     }
 
     .login-box {
-      background: rgba(45, 20, 10, 0.96);
+      background: rgba(20, 10, 5, 0.96);
       border-radius: 18px;
       padding: 28px 30px 24px;
       width: 340px;
-      border: 1px solid rgba(255, 215, 160, 0.9);
+      border: 1px solid rgba(244, 214, 120, 0.9);
       box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.95),
-        0 0 22px rgba(255, 230, 190, 0.75);
+        0 0 22px rgba(210, 160, 80, 0.75);
       position: relative;
     }
 
@@ -74,9 +74,9 @@
       inset: -1px;
       border-radius: 20px;
       background:
-        radial-gradient(circle at 10% 0, rgba(255,255,255,0.12) 0, transparent 55%),
-        radial-gradient(circle at 90% 0, rgba(255,240,210,0.18) 0, transparent 60%),
-        linear-gradient(180deg, rgba(200,40,30,0.35), transparent 55%, rgba(255,230,190,0.25));
+        radial-gradient(circle at 10% 0, rgba(255,255,255,0.10) 0, transparent 55%),
+        radial-gradient(circle at 90% 0, rgba(230,210,160,0.16) 0, transparent 60%),
+        linear-gradient(180deg, rgba(180,120,60,0.35), transparent 55%, rgba(255,230,190,0.25));
       mix-blend-mode: screen;
       opacity: 0.8;
       pointer-events: none;
@@ -111,9 +111,9 @@
     .login-input {
       width: 100%;
       padding: 8px 10px;
-      background: #2f1910;
+      background: #1a120b;
       border-radius: 8px;
-      border: 1px solid #9a5a2f;
+      border: 1px solid #b8863b;
       color: #ffe9c6;
       font-size: 14px;
       outline: none;
@@ -122,7 +122,7 @@
     .login-input:focus {
       border-color: #f4c66c;
       box-shadow: 0 0 0 1px rgba(244, 198, 108, 0.5);
-      background: #371d12;
+      background: #24160c;
     }
 
     .login-btn {
@@ -137,7 +137,7 @@
       text-transform: uppercase;
       font-weight: bold;
       background: linear-gradient(135deg, #f4c66c, #ffeab8);
-      color: #2d1307;
+      color: #1a120b;
       box-shadow:
         0 12px 24px rgba(0, 0, 0, 0.9),
         0 0 18px rgba(255, 225, 180, 0.7);
@@ -200,7 +200,7 @@
     .toggle-btn {
       border-radius: 999px;
       border: 1px solid rgba(255, 215, 160, 0.7);
-      background: rgba(40, 20, 10, 0.9);
+      background: rgba(20, 10, 5, 0.9);
       color: #f8e1c5;
       font-size: 11px;
       padding: 4px 10px;
@@ -246,8 +246,8 @@
       padding: 3px;
       border-radius: 15px;
       background:
-        radial-gradient(circle at top, #ffde9a 0%, #a64223 45%, #4a150a 95%);
-      border: 2px solid rgba(212, 175, 55, 0.9);
+        radial-gradient(circle at top, #f0c878 0%, #6b4226 45%, #2b180c 95%);
+      border: 2px solid rgba(212, 175, 55, 0.95);
       box-shadow:
         0 0 0 1px rgba(0, 0, 0, 0.85),
         0 16px 28px rgba(0, 0, 0, 0.95),
@@ -258,7 +258,7 @@
 
     .door-special {
       background:
-        radial-gradient(circle at top, #ffe8b5 0%, #cf3f27 40%, #5e170c 95%);
+        radial-gradient(circle at top, #ffe8b5 0%, #8b5a2a 45%, #3b210f 95%);
       border: 2px solid rgba(255, 230, 180, 0.95);
       box-shadow:
         0 0 0 1px rgba(255, 220, 160, 0.6),
@@ -273,11 +273,11 @@
       padding: 24px 8px;
       text-align: center;
       cursor: pointer;
-      background: linear-gradient(145deg, #5a1a14, #9c261d);
+      background: linear-gradient(145deg, #3a2414, #8b5a2a);
       box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-        0 0 12px rgba(255, 215, 128, 0.35);
-      border: 2px solid rgba(255, 215, 128, 0.6);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 0 12px rgba(240, 210, 150, 0.4);
+      border: 2px solid rgba(230, 210, 165, 0.7);
       transform-origin: left center;
       transition:
         transform 0.55s ease,
@@ -312,8 +312,8 @@
     .door-inner:hover {
       box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-        0 0 18px rgba(255, 230, 180, 0.45);
-      background: linear-gradient(145deg, #7a2219, #c43025);
+        0 0 18px rgba(250, 220, 170, 0.65);
+      background: linear-gradient(145deg, #4b2c17, #a86a2f);
       filter: brightness(1.05);
     }
 
@@ -343,7 +343,7 @@
       inset: 6px;
       border-radius: 10px;
       background:
-        radial-gradient(circle at top, #54311c 0%, #2b1208 50%, #140807 100%);
+        radial-gradient(circle at top, #2a1910 0%, #0d0704 50%, #050202 100%);
       box-shadow:
         inset 0 0 18px rgba(0, 0, 0, 0.95),
         0 0 12px rgba(0, 0, 0, 0.9);
@@ -370,16 +370,16 @@
     }
 
     .modal {
-      background: radial-gradient(circle at top, #4a1b16 0%, #260d0b 45%, #140807 100%);
+      background: radial-gradient(circle at top, #2b1910 0%, #0d0704 45%, #050202 100%);
       border-radius: 18px;
       max-width: 520px;
       width: 100%;
       padding: 22px 22px 18px;
       box-shadow:
         0 20px 42px rgba(0, 0, 0, 0.98),
-        0 0 24px rgba(255, 221, 170, 0.45);
+        0 0 24px rgba(210, 160, 80, 0.45);
       position: relative;
-      border: 1px solid rgba(255, 215, 160, 0.8);
+      border: 1px solid rgba(244, 214, 120, 0.8);
       color: #f8e8cf;
     }
 
@@ -422,7 +422,7 @@
     .email-btn {
       border: none;
       background: linear-gradient(135deg, #f4c66c, #ffeab8);
-      color: #2d1307;
+      color: #1a120b;
       font-size: 11px;
       font-weight: bold;
       letter-spacing: 0.12em;
@@ -446,7 +446,7 @@
 
     .close-btn {
       border: none;
-      background: #72321e;
+      background: #4b2c17;
       color: #f9e1c7;
       font-size: 11px;
       text-transform: uppercase;
@@ -454,6 +454,10 @@
       padding: 7px 13px;
       border-radius: 999px;
       cursor: pointer;
+    }
+
+    .close-btn:hover {
+      filter: brightness(1.05);
     }
 
     .snowflake {
@@ -531,7 +535,7 @@
       <div class="brand" id="brandText">VikingLuck · VIP Adventskalender</div>
       <h1 class="title" id="titleText">24 Tage · 24 exklusive Angebote</h1>
       <p class="subtitle" id="subtitleText">
-        Standard: Türen öffnen sich im Dezember am jeweiligen Kalendertag – über Admin-Passwort kannst du den Testmodus aktivieren.
+        Standard: Türen öffnen sich im Dezember am jeweiligen Kalendertag – wir wünschen ein Frohes Fest.
       </p>
     </header>
 
@@ -542,7 +546,7 @@
     <main>
       <section class="calendar" id="calendar"></section>
       <p class="footer-note" id="footerNoteText">
-        Im Live-Betrieb gilt: Jedes Angebot ist streng an seinen Kalendertag gebunden. Im Testmodus sind alle Türen freigeschaltet.
+        Die Umsatzbedingungen und maximalen Cashback Beträge richten sich nach VIP Level und sind auf Nachfrage bei deinem Manager einzuholen.
       </p>
     </main>
   </div>
@@ -603,345 +607,343 @@
     const offersDe = [
       {
         day: 1,
-        title: "100€ Bonus – starker Auftakt",
-        subtitle: "Wer ernst spielt, startet nicht mit Kleingeld.",
-        quote: "Guter Dezember beginnt nicht mit Hoffnung, sondern mit Balance.",
-        bodyHtml: `
-          <p>Zum 1. Dezember gibt es einen klaren Einstieg:</p>
-          <ul>
-            <li>Fester Bonus: <strong>100€</strong></li>
-            <li>Umsatzbedingungen: <strong>5x</strong></li>
-            <li>Gültig als einmaliges Angebot zum Start des Kalenders</li>
-          </ul>
-        `,
-        emailText: "100€ Bonus mit 5x Umsatz für den Adventsstart."
+        title: "Tag 1",
+        quote: "",
+        bodyHtml: `<p>20 Freispiele</p>`,
+        emailText: "20 Freispiele"
       },
       {
         day: 2,
-        title: "50% Einzahlungsbonus bis 250€",
-        subtitle: "Du zahlst ein – VikingLuck verstärkt den Hebel.",
-        quote: "Einzahlung ohne Bonus ist wie Angriff ohne Munition.",
-        bodyHtml: `
-          <p>Am 2. Dezember sicherst du dir einen klassischen Reload:</p>
-          <ul>
-            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
-            <li>Maximaler Bonusbetrag: <strong>250€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50% Einzahlungsbonus bis 250€ mit 3x Umsatz."
+        title: "Tag 2",
+        quote: "",
+        bodyHtml: `<p>Mission:<br>Setze €500 auf einen beliebigen Slot → Erhalte €50 Bonus</p>`,
+        emailText: "Mission: €500 setzen → €50 Bonus"
       },
       {
         day: 3,
-        title: "75% Cashback auf die erste Einzahlung",
-        subtitle: "Aggressiv spielen, ohne komplett ins Risiko zu gehen.",
-        quote: "Wer Risiko nimmt, verdient auch eine Absicherung.",
-        bodyHtml: `
-          <p>Dein Schutzschirm für den 3. Dezember:</p>
-          <ul>
-            <li><strong>75% Cashback</strong> auf deine erste qualifizierende Einzahlung des Tages</li>
-            <li>Gültig, falls dein Spieltag insgesamt im Minus endet</li>
-            <li>Cashback gemäß VIP-Bedingungen, interne Abrechnung nach Ende des Tages</li>
-          </ul>
-        `,
-        emailText: "75% Cashback auf die erste Einzahlung des Tages, falls der Tag negativ endet."
+        title: "Tag 3",
+        quote: "",
+        bodyHtml: `<p>30% Bonus auf deine erste Einzahlung des Tages (bis zu €200)</p>`,
+        emailText: "30% Bonus auf die erste Einzahlung des Tages"
       },
       {
         day: 4,
-        title: "50€ Freiwette oder 50€ Casino-Bonus",
-        subtitle: "Sport oder Casino – entscheidend ist, dass du spielst.",
-        quote: "Keine Ausreden: du wählst die Arena, wir stellen den Einsatz.",
-        bodyHtml: `
-          <p>Am 4. Dezember hast du die Wahl:</p>
-          <ul>
-            <li><strong>50€ Freiwette</strong> im Sportsbook ODER</li>
-            <li><strong>50€ Casino-Bonus</strong> mit <strong>3x</strong> Umsatzbedingungen</li>
-            <li>Nur eine der beiden Optionen kann aktiviert werden</li>
-          </ul>
-        `,
-        emailText: "Wahl zwischen 50€ Freiwette im Sportsbook oder 50€ Casino-Bonus mit 3x Umsatz."
+        title: "Tag 4",
+        quote: "",
+        bodyHtml: `<p>10% tägliches Cashback auf Nettverluste</p>`,
+        emailText: "10% tägliches Cashback"
       },
       {
         day: 5,
-        title: "Wochenend-Bonuspaket",
-        subtitle: "Wochenende ist nicht zum Zuschauen da.",
-        quote: "Wenn andere aufgeben, baust du Volumen auf.",
-        bodyHtml: `
-          <p>Zum Wochenende gibt es ein kombiniertes Paket:</p>
-          <ul>
-            <li><strong>100€ Bonus</strong> mit <strong>3x</strong> Umsatz</li>
-            <li><strong>40% Cashback</strong> auf Nettoverluste über das gesamte Wochenende</li>
-            <li>Maximaler Cashback-Betrag: <strong>500€</strong>, Cashback mit <strong>1x</strong> Umsatz</li>
-          </ul>
-        `,
-        emailText: "Wochenendpaket mit 100€ Bonus (3x) und 40% Cashback bis 500€ (1x)."
+        title: "Tag 5",
+        quote: "",
+        bodyHtml: `<p>Raffle Day<br>Jede Einzahlung von €20 = 1 Ticket für die Ziehung</p>`,
+        emailText: "Raffle Day: 1 Ticket pro €20 Einzahlung"
       },
       {
         day: 6,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Wer Tickets sammelt, redet später nicht von Pech.",
-        quote: "Mehr Tickets, mehr Ziehungen, weniger Ausreden.",
-        bodyHtml: `
-          <p>Am 6. Dezember erhältst du zusätzlichen Kampagnen-Vorteil:</p>
-          <ul>
-            <li><strong>5 zusätzliche Tickets</strong> für die laufende Ticketkampagne</li>
-            <li>Gutschrift direkt auf dein Kampagnenkonto</li>
-          </ul>
-        `,
-        emailText: "5 zusätzliche Tickets für die laufende Ticketkampagne."
+        title: "Tag 6",
+        quote: "",
+        bodyHtml: `<p>€20 extra Bonus am Nikolaustag</p>`,
+        emailText: "€20 Bonus"
       },
       {
         day: 7,
-        title: "5% Monatscashback Dezember",
-        subtitle: "Kompletter Monat mit Sicherheitsnetz.",
-        quote: "Du setzt durch – wir drehen am Ende die Bilanz ein Stück zurück.",
-        bodyHtml: `
-          <p>Mit Tür 7 sicherst du dir eine Monatsabsicherung:</p>
-          <ul>
-            <li><strong>5% Cashback</strong> auf deine Nettoverluste im Dezember</li>
-            <li>Abrechnung nach Monatsende gemäß VIP-Regelung</li>
-          </ul>
-        `,
-        emailText: "5% Monatscashback auf alle Nettoverluste im Dezember."
+        title: "Tag 7",
+        quote: "",
+        bodyHtml: `<p>20 Freispiele für Book of Dead</p>`,
+        emailText: "20 Freispiele für Book of Dead"
       },
       {
         day: 8,
-        title: "50€ Bonus",
-        subtitle: "Kleine Erinnerung: du bist hier nicht zum Zusehen.",
-        quote: "Wer nicht nachlädt, verliert automatisch.",
-        bodyHtml: `
-          <p>Zum 8. Dezember gibt es einen klaren Zwischenboost:</p>
-          <ul>
-            <li>Fester Bonus: <strong>50€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50€ fester Bonus mit 3x Umsatz."
+        title: "Tag 8",
+        quote: "",
+        bodyHtml: `<p>50% Bonus auf deine Einzahlung des Tages</p>`,
+        emailText: "50% Bonus"
       },
       {
         day: 9,
-        title: "50% Einzahlungsbonus bis 150€",
-        subtitle: "Mehr Einsatzkraft für ernsthafte Sessions.",
-        quote: "Du kannst tight spielen – aber nicht mit leerem Tank.",
-        bodyHtml: `
-          <p>Am 9. Dezember gilt:</p>
-          <ul>
-            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
-            <li>Maximaler Bonusbetrag: <strong>150€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50% Einzahlungsbonus bis 150€ mit 3x Umsatz."
+        title: "Tag 9",
+        quote: "",
+        bodyHtml: `<p>10 Freispiele für Gates of Olympus</p>`,
+        emailText: "10 Freispiele für Gates of Olympus"
       },
       {
         day: 10,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Du willst oben mitreden? Sammel Tickets.",
-        quote: "Jackpots gewinnt nicht der, der zuschaut.",
-        bodyHtml: `
-          <p>Am 10. Dezember:</p>
-          <ul>
-            <li><strong>5 weitere Tickets</strong> für die Ticketkampagne</li>
-            <li>Ideal zum Aufbau deines Ticketvolumens</li>
-          </ul>
-        `,
-        emailText: "5 weitere Tickets für die Ticketkampagne."
+        title: "Tag 10",
+        quote: "",
+        bodyHtml: `<p>€10 Bonus</p>`,
+        emailText: "€10 Bonus"
       },
       {
         day: 11,
-        title: "50€ Cashback Fixbetrag",
-        subtitle: "Falls der Tag hässlich läuft, fangen wir mit auf.",
-        quote: "Nicht jeder Tag wird gut – aber du musst ihn nicht allein tragen.",
-        bodyHtml: `
-          <p>Am 11. Dezember:</p>
-          <ul>
-            <li>Fixer Cashback-Betrag: <strong>50€</strong></li>
-            <li>Gültig, wenn dein Tagessaldo negativ ist</li>
-            <li>Cashback mit <strong>1x</strong> Umsatz</li>
-          </ul>
-        `,
-        emailText: "50€ fixer Cashback bei negativem Tagessaldo (1x Umsatz)."
+        title: "Tag 11",
+        quote: "",
+        bodyHtml: `<p>Raffle Day<br>Jede Einzahlung von €20 = 1 Ticket</p>`,
+        emailText: "Raffle Day: 1 Ticket pro €20"
       },
       {
         day: 12,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Kontinuierlich Tickets sammeln = langfristig ernsthaft spielen.",
-        quote: "Wer dranbleibt, braucht weniger Glück.",
-        bodyHtml: `
-          <p>Am 12. Dezember:</p>
-          <ul>
-            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
-          </ul>
-        `,
-        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+        title: "Tag 12",
+        quote: "",
+        bodyHtml: `<p>20 Freispiele für Sweet Bonanza</p>`,
+        emailText: "20 Freispiele für Sweet Bonanza"
       },
       {
         day: 13,
-        title: "50% Cashback bis 150€",
-        subtitle: "Aggressiver Tag mit sauberer Absicherung.",
-        quote: "Druck machen ist okay – solange jemand dein Netz hält.",
-        bodyHtml: `
-          <p>Der 13. Dezember bringt dir:</p>
-          <ul>
-            <li><strong>50% Cashback</strong> auf deine Nettoverluste des Tages</li>
-            <li>Maximaler Cashback-Betrag: <strong>150€</strong></li>
-            <li>Cashback mit <strong>1x</strong> Umsatz</li>
-          </ul>
-        `,
-        emailText: "50% Cashback auf Nettoverluste des Tages bis 150€ (1x Umsatz)."
+        title: "Tag 13",
+        quote: "",
+        bodyHtml: `<p>30% Bonus auf die erste Einzahlung des Tages</p>`,
+        emailText: "30% Bonus"
       },
       {
         day: 14,
-        title: "50€ Bonus",
-        subtitle: "Solider Reload für den nächsten Schlag.",
-        quote: "Balance ist dein Werkzeug, nicht dein Ziel.",
-        bodyHtml: `
-          <p>Am 14. Dezember:</p>
-          <ul>
-            <li>Fester Bonus: <strong>50€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50€ Bonus mit 3x Umsatz."
+        title: "Tag 14",
+        quote: "",
+        bodyHtml: `<p>10% Cashback auf deinen Tag</p>`,
+        emailText: "10% Cashback"
       },
       {
         day: 15,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Mehr Volumen, weniger Zufall.",
-        quote: "Du kannst den Ausgang nicht kontrollieren – aber deine Chancen schon.",
-        bodyHtml: `
-          <p>Zum 15. Dezember:</p>
-          <ul>
-            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
-          </ul>
-        `,
-        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+        title: "Tag 15",
+        quote: "",
+        bodyHtml: `<p>20 Freispiele für Big Bass Bonanza</p>`,
+        emailText: "20 Freispiele für Big Bass Bonanza"
       },
       {
         day: 16,
-        title: "50% Einzahlungsbonus bis 100€",
-        subtitle: "Sauberer Reload, kontrolliertes Volumen.",
-        quote: "Du musst nicht maximal einzahlen – nur maximal klug.",
-        bodyHtml: `
-          <p>Am 16. Dezember:</p>
-          <ul>
-            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
-            <li>Maximaler Bonusbetrag: <strong>100€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50% Einzahlungsbonus bis 100€ mit 3x Umsatz."
+        title: "Tag 16",
+        quote: "",
+        bodyHtml: `<p>€10 Bonus</p>`,
+        emailText: "€10 Bonus"
       },
       {
         day: 17,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Kurz vor Weihnachts-Endspurt nochmal Tickets stapeln.",
-        quote: "Wer bis hierhin durchzieht, baut jetzt den Vorteil aus.",
-        bodyHtml: `
-          <p>Am 17. Dezember:</p>
-          <ul>
-            <li><strong>5 Tickets</strong> für die Ticketkampagne</li>
-          </ul>
-        `,
-        emailText: "5 Tickets für die Ticketkampagne."
+        title: "Tag 17",
+        quote: "",
+        bodyHtml: `<p>10 Freispiele für The Dog House</p>`,
+        emailText: "10 Freispiele für The Dog House"
       },
       {
         day: 18,
-        title: "50€ Bonus",
-        subtitle: "Ruhiger, aber klarer Boost vor den hohen Tagen.",
-        quote: "Stabilität vor dem Peak macht den Unterschied.",
-        bodyHtml: `
-          <p>Am 18. Dezember:</p>
-          <ul>
-            <li>Fester Bonus: <strong>50€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50€ Bonus mit 3x Umsatz."
+        title: "Tag 18",
+        quote: "",
+        bodyHtml: `<p>50% Bonus auf deine Einzahlung</p>`,
+        emailText: "50% Bonus"
       },
       {
         day: 19,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Letzter Aufbau, bevor die wirklich großen Tage kommen.",
-        quote: "Wenn du jetzt nicht sammelst, sammelst du nie.",
-        bodyHtml: `
-          <p>Der 19. Dezember bringt dir:</p>
-          <ul>
-            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
-          </ul>
-        `,
-        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+        title: "Tag 19",
+        quote: "",
+        bodyHtml: `<p>20 Freispiele für Legacy of Dead</p>`,
+        emailText: "20 Freispiele für Legacy of Dead"
       },
       {
         day: 20,
-        title: "50% Einzahlungsbonus bis 150€",
-        subtitle: "Kurz vor Weihnachten wird der Einsatz noch einmal erhöht.",
-        quote: "Wer an den Feiertagen gewinnen will, bereitet den Stack vorher vor.",
-        bodyHtml: `
-          <p>Am 20. Dezember:</p>
-          <ul>
-            <li><strong>50% Bonus</strong> auf deine qualifizierende Einzahlung</li>
-            <li>Maximaler Bonusbetrag: <strong>150€</strong></li>
-            <li>Umsatzbedingungen: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "50% Einzahlungsbonus bis 150€ mit 3x Umsatz."
+        title: "Tag 20",
+        quote: "",
+        bodyHtml: `<p>Raffle Day<br>Jede Einzahlung von €20 = 1 Ticket</p>`,
+        emailText: "Raffle Day: 1 Ticket pro €20"
       },
       {
         day: 21,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Kurz vor Schluss noch einmal Tickets sichern.",
-        quote: "Wenn du dranbleibst, brauchst du weniger Wunder an Heiligabend.",
-        bodyHtml: `
-          <p>Am 21. Dezember:</p>
-          <ul>
-            <li><strong>5 Tickets</strong> für die Ticketkampagne</li>
-          </ul>
-        `,
-        emailText: "5 Tickets für die Ticketkampagne."
+        title: "Tag 21",
+        quote: "",
+        bodyHtml: `<p>€20 Bonus</p>`,
+        emailText: "€20 Bonus"
       },
       {
         day: 22,
-        title: "60% Cashback auf die erste Einzahlung",
-        subtitle: "Aggressiver Push – aber mit echtem Fallschirm.",
-        quote: "Aufdrehen ist erlaubt, solange du weich landest.",
-        bodyHtml: `
-          <p>Am 22. Dezember steht Sicherheit im Fokus:</p>
-          <ul>
-            <li><strong>60% Cashback</strong> auf deine erste qualifizierende Einzahlung des Tages</li>
-            <li>Gültig, wenn der Tag insgesamt im Minus endet</li>
-            <li>Cashback mit <strong>1x</strong> Umsatz</li>
-          </ul>
-        `,
-        emailText: "60% Cashback auf die erste qualifizierende Einzahlung des Tages (1x Umsatz)."
+        title: "Tag 22",
+        quote: "",
+        bodyHtml: `<p>20 Freispiele für Gates of Olympus</p>`,
+        emailText: "20 Freispiele für Gates of Olympus"
       },
       {
         day: 23,
-        title: "5 Tickets für die Ticketkampagne",
-        subtitle: "Letzte Ticket-Welle vor Heiligabend.",
-        quote: "Heute sammelst du – morgen beschwerst du dich nicht.",
-        bodyHtml: `
-          <p>Am 23. Dezember:</p>
-          <ul>
-            <li><strong>5 zusätzliche Tickets</strong> für die Ticketkampagne</li>
-          </ul>
-        `,
-        emailText: "5 zusätzliche Tickets für die Ticketkampagne."
+        title: "Tag 23",
+        quote: "",
+        bodyHtml: `<p>30% Bonus auf deine Einzahlung</p>`,
+        emailText: "30% Bonus"
       },
       {
         day: 24,
-        title: "Weihnachtsbonus 500€",
-        subtitle: "Heiligabend ist kein Tag für kleine Limits.",
-        quote: "Wenn du an Weihnachten nichts riskierst, brauchst du im Januar nicht über Glück reden.",
-        bodyHtml: `
-          <p>Zum 24. Dezember gibt es das Highlight des Kalenders:</p>
-          <ul>
-            <li>Fester Weihnachtsbonus: <strong>500€</strong></li>
-            <li>Umsatzbedingungen gemäß individueller VIP-Abstimmung</li>
-            <li>Nur am 24. Dezember im Live-Betrieb aktivierbar</li>
-          </ul>
-        `,
-        emailText: "Weihnachtsbonus in Höhe von 500€ gemäß individueller VIP-Abstimmung."
+        title: "Tag 24",
+        quote: "",
+        bodyHtml: `<p>Weihnachtsbonus:<br>Schicke uns ein Foto im Weihnachtspullover und erhalte einen Bonus von 300€</p>`,
+        emailText: "Foto im Weihnachtspullover : "
+      }
+    ];
+
+    /* ---------------- Angebote EN ---------------- */
+    const offersEn = [
+      {
+        day: 1,
+        title: "Day 1",
+        quote: "",
+        bodyHtml: `<p>20 Free Spins</p>`,
+        emailText: "20 Free Spins"
+      },
+      {
+        day: 2,
+        title: "Day 2",
+        quote: "",
+        bodyHtml: `<p>Mission:<br>Wager €500 on any slot → Receive €50 bonus</p>`,
+        emailText: "Mission: Wager €500 → Get €50"
+      },
+      {
+        day: 3,
+        title: "Day 3",
+        quote: "",
+        bodyHtml: `<p>30% Bonus on your first deposit today (up to €200)</p>`,
+        emailText: "30% bonus on the first deposit today"
+      },
+      {
+        day: 4,
+        title: "Day 4",
+        quote: "",
+        bodyHtml: `<p>10% Daily Net-Loss Cashback</p>`,
+        emailText: "10% daily cashback"
+      },
+      {
+        day: 5,
+        title: "Day 5",
+        quote: "",
+        bodyHtml: `<p>Raffle Day<br>Every €20 deposit = 1 Ticket</p>`,
+        emailText: "Raffle Day – 1 ticket per €20 deposit"
+      },
+      {
+        day: 6,
+        title: "Day 6",
+        quote: "",
+        bodyHtml: `<p>Cashback Booster<br>All deposits today count 25% extra toward your daily cashback calculation.</p>`,
+        emailText: "Cashback Booster Day"
+      },
+      {
+        day: 7,
+        title: "Day 7",
+        quote: "",
+        bodyHtml: `<p>Double Raffle Tickets<br>Every €20 deposit = 2 tickets today</p>`,
+        emailText: "Double Raffle Tickets Day"
+      },
+      {
+        day: 8,
+        title: "Day 8",
+        quote: "",
+        bodyHtml: `<p>50% Reload Bonus up to €500 on your first deposit of the day</p>`,
+        emailText: "50% reload bonus"
+      },
+      {
+        day: 9,
+        title: "Day 9",
+        quote: "",
+        bodyHtml: `<p>Tiered Deposit Bonus Day:<br>• Deposit €500 – Get €75 Bonus<br>• Deposit €1,000 – Get €200 Bonus<br>• Deposit €2,000 – Get €500 Bonus</p>`,
+        emailText: "Tiered Deposit Bonus Day"
+      },
+      {
+        day: 10,
+        title: "Day 10",
+        quote: "",
+        bodyHtml: `<p>50 Free Spins on any Christmas-themed slot</p>`,
+        emailText: "50 Free Spins"
+      },
+      {
+        day: 11,
+        title: "Day 11",
+        quote: "",
+        bodyHtml: `<p>15% Daily Net-Loss Cashback</p>`,
+        emailText: "15% cashback"
+      },
+      {
+        day: 12,
+        title: "Day 12",
+        quote: "",
+        bodyHtml: `<p>Weekend Tournament Point Campaign<br>Every €50 deposit = +10 Points</p>`,
+        emailText: "Weekend Tournament Point Campaign"
+      },
+      {
+        day: 13,
+        title: "Day 13",
+        quote: "",
+        bodyHtml: `<p>Claim your +5 Points for the Weekend Tournament Campaign</p>`,
+        emailText: "+5 Tournament Points"
+      },
+      {
+        day: 14,
+        title: "Day 14",
+        quote: "",
+        bodyHtml: `<p>10% Insurance on all deposits today</p>`,
+        emailText: "10% Insurance Day"
+      },
+      {
+        day: 15,
+        title: "Day 15",
+        quote: "",
+        bodyHtml: `<p>Two Bonuses Today:<br>• 1st deposit → 30% Bonus<br>• 2nd deposit → 20% Bonus</p>`,
+        emailText: "30% + 20% dual bonus day"
+      },
+      {
+        day: 16,
+        title: "Day 16",
+        quote: "",
+        bodyHtml: `<p>€50 Bonus / Free Bet</p>`,
+        emailText: "€50 Bonus / Free Bet"
+      },
+      {
+        day: 17,
+        title: "Day 17",
+        quote: "",
+        bodyHtml: `<p>Mission:<br>Wager €1000 today → Receive a €100 Bonus</p>`,
+        emailText: "Mission: Wager €1000 → Get €100"
+      },
+      {
+        day: 18,
+        title: "Day 18",
+        quote: "",
+        bodyHtml: `<p>20% Deposit Insurance<br>If today goes negative, you receive a 20% compensation.</p>`,
+        emailText: "20% Deposit Insurance"
+      },
+      {
+        day: 19,
+        title: "Day 19",
+        quote: "",
+        bodyHtml: `<p>Leaderboard Race (Fri–Sun)<br>High-score tournament for cash rewards</p>`,
+        emailText: "Weekend leaderboard race"
+      },
+      {
+        day: 20,
+        title: "Day 20",
+        quote: "",
+        bodyHtml: `<p>Tournament Points x2 Day<br>Everything you play today rewards double points</p>`,
+        emailText: "Tournament Points ×2"
+      },
+      {
+        day: 21,
+        title: "Day 21",
+        quote: "",
+        bodyHtml: `<p>Tournament Points x2 Day<br>Every deposit today counts double for tournament progression</p>`,
+        emailText: "Tournament Points ×2 (Deposits)"
+      },
+      {
+        day: 22,
+        title: "Day 22",
+        quote: "",
+        bodyHtml: `<p>50% Bonus on your second deposit of the day</p>`,
+        emailText: "50% second-deposit bonus"
+      },
+      {
+        day: 23,
+        title: "Day 23",
+        quote: "",
+        bodyHtml: `<p>Deposit at least €200 today and your cashback segment increases by one tier for the entire weekend.</p>`,
+        emailText: "Cashback Tier Upgrade Day"
+      },
+      {
+        day: 24,
+        title: "Day 24",
+        quote: "",
+        bodyHtml: `<p>Send a picture of you wearing a Christmas sweater and receive a bonus of up to 300€! </p>`,
+        emailText: "Christmas Sweater → 300"
       }
     ];
 
@@ -949,404 +951,517 @@
     const offersEs = [
       {
         day: 1,
-        title: "Bono de 100€ – inicio fuerte",
-        subtitle: "Quien juega en serio no empieza con poco saldo.",
-        quote: "Un buen diciembre no empieza con esperanza, sino con balance.",
-        bodyHtml: `
-          <p>Para el 1 de diciembre tienes un inicio claro:</p>
-          <ul>
-            <li>Bono fijo: <strong>100€</strong></li>
-            <li>Requisitos de apuesta: <strong>5x</strong></li>
-            <li>Válido como oferta única para el inicio del calendario</li>
-          </ul>
-        `,
-        emailText: "Bono de 100€ con rollover 5x para el inicio del Adviento."
+        title: "Día 1",
+        quote: "",
+        bodyHtml: `<p>20 Giros Gratis</p>`,
+        emailText: "20 Giros Gratis"
       },
       {
         day: 2,
-        title: "50% de bono hasta 250€",
-        subtitle: "Tú depositas – VikingLuck aumenta el efecto.",
-        quote: "Depositar sin bono es como atacar sin munición.",
-        bodyHtml: `
-          <p>El 2 de diciembre aseguras un clásico reload:</p>
-          <ul>
-            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
-            <li>Importe máximo de bono: <strong>250€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono de depósito del 50% hasta 250€ con rollover 3x."
+        title: "Día 2",
+        quote: "",
+        bodyHtml: `<p>Misión:<br>Apuesta €500 en cualquier slot → Recibe un bono de €50</p>`,
+        emailText: "Misión: apostar €500 → bono €50"
       },
       {
         day: 3,
-        title: "75% de cashback sobre el primer depósito",
-        subtitle: "Juego agresivo sin asumir todo el riesgo.",
-        quote: "Quien asume riesgo también merece cobertura.",
-        bodyHtml: `
-          <p>Tu protección para el 3 de diciembre:</p>
-          <ul>
-            <li><strong>75% de cashback</strong> sobre tu primer depósito cualificado del día</li>
-            <li>Válido si el día termina en negativo</li>
-            <li>Cashback según las condiciones VIP, abonado tras el cierre del día</li>
-          </ul>
-        `,
-        emailText: "75% de cashback sobre el primer depósito del día si el resultado es negativo."
+        title: "Día 3",
+        quote: "",
+        bodyHtml: `<p>30% de bono en tu primer depósito de hoy (hasta €500)</p>`,
+        emailText: "30% de bono en el primer depósito de hoy"
       },
       {
         day: 4,
-        title: "Apuesta gratuita de 50€ o bono casino de 50€",
-        subtitle: "Deporte o casino – lo importante es que juegues.",
-        quote: "Sin excusas: eliges la arena, nosotros ponemos la ficha.",
-        bodyHtml: `
-          <p>El 4 de diciembre tienes la elección:</p>
-          <ul>
-            <li><strong>Apuesta gratuita de 50€</strong> en Sportsbook O</li>
-            <li><strong>Bono casino de 50€</strong> con requisitos de apuesta de <strong>3x</strong></li>
-            <li>Solo se puede activar una de las opciones</li>
-          </ul>
-        `,
-        emailText: "Elección entre apuesta gratuita de 50€ en Sportsbook o bono casino de 50€ con rollover 3x."
+        title: "Día 4",
+        quote: "",
+        bodyHtml: `<p>10% de cashback diario sobre pérdidas netas</p>`,
+        emailText: "10% de cashback diario"
       },
       {
         day: 5,
-        title: "Paquete de fin de semana",
-        subtitle: "El fin de semana no es para mirar desde fuera.",
-        quote: "Cuando otros se rinden, tú construyes volumen.",
-        bodyHtml: `
-          <p>Para el fin de semana hay un paquete combinado:</p>
-          <ul>
-            <li><strong>Bono de 100€</strong> con rollover 3x</li>
-            <li><strong>40% de cashback</strong> sobre pérdidas netas durante todo el fin de semana</li>
-            <li>Cashback máximo: <strong>500€</strong>, cashback con rollover <strong>1x</strong></li>
-          </ul>
-        `,
-        emailText: "Paquete de fin de semana con bono de 100€ (3x) y 40% de cashback hasta 500€ (1x)."
+        title: "Día 5",
+        quote: "",
+        bodyHtml: `<p>Día de la Rifa<br>Cada depósito de €20 = 1 boleto para el sorteo del fin de semana.<br>Premio acreditado el lunes.</p>`,
+        emailText: "Día de la rifa – 1 boleto por €20"
       },
       {
         day: 6,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Quien colecciona tickets no habla luego de mala suerte.",
-        quote: "Más tickets, más sorteos, menos excusas.",
-        bodyHtml: `
-          <p>El 6 de diciembre recibes ventaja adicional en la campaña:</p>
-          <ul>
-            <li><strong>5 tickets extra</strong> para la campaña de tickets activa</li>
-            <li>Abono directo en tu saldo de campaña</li>
-          </ul>
-        `,
-        emailText: "5 tickets extra para la campaña de tickets activa."
+        title: "Día 6",
+        quote: "",
+        bodyHtml: `<p>Cashback Booster<br>Todos los depósitos de hoy cuentan un 25% extra para tu cashback semanal.</p>`,
+        emailText: "Cashback Booster"
       },
       {
         day: 7,
-        title: "5% de cashback mensual en diciembre",
-        subtitle: "Un mes completo con red de seguridad.",
-        quote: "Tú sigues jugando – nosotros corregimos un poco el resultado al final.",
-        bodyHtml: `
-          <p>Con la puerta 7 aseguras un cashback mensual:</p>
-          <ul>
-            <li><strong>5% de cashback</strong> sobre tus pérdidas netas en diciembre</li>
-            <li>Liquidación al final del mes según reglas VIP</li>
-          </ul>
-        `,
-        emailText: "5% de cashback mensual sobre todas las pérdidas netas de diciembre."
+        title: "Día 7",
+        quote: "",
+        bodyHtml: `<p>Doble de boletos para la rifa<br>Depósito de €20 = 2 boletos</p>`,
+        emailText: "Doble de boletos"
       },
       {
         day: 8,
-        title: "Bono de 50€",
-        subtitle: "Un recordatorio: no estás aquí para mirar.",
-        quote: "Quien no recarga, pierde automáticamente.",
-        bodyHtml: `
-          <p>El 8 de diciembre hay un claro impulso intermedio:</p>
-          <ul>
-            <li>Bono fijo: <strong>50€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono fijo de 50€ con rollover 3x."
+        title: "Día 8",
+        quote: "",
+        bodyHtml: `<p>50% de bono de recarga hasta €500 en el primer depósito del día</p>`,
+        emailText: "50% de bono de recarga"
       },
       {
         day: 9,
-        title: "50% de bono hasta 150€",
-        subtitle: "Más potencia para sesiones serias.",
-        quote: "Puedes jugar tight – pero no con el tanque vacío.",
-        bodyHtml: `
-          <p>El 9 de diciembre:</p>
-          <ul>
-            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
-            <li>Importe máximo de bono: <strong>150€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono del 50% hasta 150€ con rollover 3x."
+        title: "Día 9",
+        quote: "",
+        bodyHtml: `<p>Día de Bono por Depósito Escalonado:<br>• Depósito €50 – Bono básico<br>• Depósito €1.000 – Bono 20%<br>• Depósito €2.000+ – Bono 25%</p>`,
+        emailText: "Bono escalonado por depósito"
       },
       {
         day: 10,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Si quieres estar arriba, colecciona tickets.",
-        quote: "Los jackpots no los gana quien solo mira.",
-        bodyHtml: `
-          <p>El 10 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets adicionales</strong> para la campaña de tickets</li>
-            <li>Ideal para ampliar tu volumen de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets adicionales para la campaña de tickets."
+        title: "Día 10",
+        quote: "",
+        bodyHtml: `<p>50 giros gratis en cualquier slot navideña</p>`,
+        emailText: "50 giros gratis"
       },
       {
         day: 11,
-        title: "Cashback fijo de 50€",
-        subtitle: "Si el día sale feo, te apoyamos.",
-        quote: "No todos los días son buenos – pero no tienes que cargarlos solo.",
-        bodyHtml: `
-          <p>El 11 de diciembre:</p>
-          <ul>
-            <li>Cashback fijo: <strong>50€</strong></li>
-            <li>Válido si el resultado diario es negativo</li>
-            <li>Cashback con rollover <strong>1x</strong></li>
-          </ul>
-        `,
-        emailText: "Cashback fijo de 50€ con resultado diario negativo (1x)."
+        title: "Día 11",
+        quote: "",
+        bodyHtml: `<p>15% de cashback diario sobre pérdidas netas</p>`,
+        emailText: "15% de cashback"
       },
       {
         day: 12,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Coleccionar de forma constante = jugar en serio a largo plazo.",
-        quote: "Quien se mantiene constante necesita menos suerte.",
-        bodyHtml: `
-          <p>El 12 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets extra para la campaña de tickets."
+        title: "Día 12",
+        quote: "",
+        bodyHtml: `<p>Campaña de Puntos del Torneo del Fin de Semana<br>Cada depósito de €50 = +10 puntos</p>`,
+        emailText: "Campaña de puntos del fin de semana"
       },
       {
         day: 13,
-        title: "50% de cashback hasta 150€",
-        subtitle: "Día agresivo con buena cobertura.",
-        quote: "Meter presión está bien – mientras alguien sujete la red.",
-        bodyHtml: `
-          <p>El 13 de diciembre te trae:</p>
-          <ul>
-            <li><strong>50% de cashback</strong> sobre tus pérdidas netas del día</li>
-            <li>Cashback máximo: <strong>150€</strong></li>
-            <li>Cashback con rollover <strong>1x</strong></li>
-          </ul>
-        `,
-        emailText: "50% de cashback sobre pérdidas netas del día hasta 150€ (1x)."
+        title: "Día 13",
+        quote: "",
+        bodyHtml: `<p>Reclama tus +5 puntos para la campaña de puntos del fin de semana</p>`,
+        emailText: "+5 puntos de torneo"
       },
       {
         day: 14,
-        title: "Bono de 50€",
-        subtitle: "Un reload sólido para el siguiente golpe.",
-        quote: "El balance es tu herramienta, no tu objetivo.",
-        bodyHtml: `
-          <p>El 14 de diciembre:</p>
-          <ul>
-            <li>Bono fijo: <strong>50€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono de 50€ con rollover 3x."
+        title: "Día 14",
+        quote: "",
+        bodyHtml: `<p>10% de seguro en todos los depósitos de hoy</p>`,
+        emailText: "10% de seguro"
       },
       {
         day: 15,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Más volumen, menos azar.",
-        quote: "No puedes controlar el resultado, pero sí tus oportunidades.",
-        bodyHtml: `
-          <p>El 15 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets extra para la campaña de tickets."
+        title: "Día 15",
+        quote: "",
+        bodyHtml: `<p>Dos Bonos Hoy:<br>• 1º depósito → Bono del 30%<br>• 2º depósito → Bono del 20%</p>`,
+        emailText: "30% + 20% doble bono"
       },
       {
         day: 16,
-        title: "50% de bono hasta 100€",
-        subtitle: "Reload limpio, volumen controlado.",
-        quote: "No tienes que depositar al máximo – solo hacerlo con cabeza.",
-        bodyHtml: `
-          <p>El 16 de diciembre:</p>
-          <ul>
-            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
-            <li>Importe máximo de bono: <strong>100€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono del 50% hasta 100€ con rollover 3x."
+        title: "Día 16",
+        quote: "",
+        bodyHtml: `<p>€50 de Bono / Apuesta Gratis</p>`,
+        emailText: "€50 bono / apuesta gratis"
       },
       {
         day: 17,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Antes del sprint final de Navidad, más tickets.",
-        quote: "Quien ha llegado hasta aquí, ahora amplía su ventaja.",
-        bodyHtml: `
-          <p>El 17 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets</strong> para la campaña de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets para la campaña de tickets."
+        title: "Día 17",
+        quote: "",
+        bodyHtml: `<p>Misión:<br>Apuesta €1000 hoy → Obtén un bono de €100</p>`,
+        emailText: "Misión: apostar €1000 → bono €100"
       },
       {
         day: 18,
-        title: "Bono de 50€",
-        subtitle: "Impulso tranquilo pero claro antes de los días fuertes.",
-        quote: "La estabilidad antes del pico marca la diferencia.",
-        bodyHtml: `
-          <p>El 18 de diciembre:</p>
-          <ul>
-            <li>Bono fijo: <strong>50€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono de 50€ con rollover 3x."
+        title: "Día 18",
+        quote: "",
+        bodyHtml: `<p>20% de Seguro sobre el Depósito<br>Si hoy no hay suerte → recibes el 20% mañana</p>`,
+        emailText: "20% de seguro de depósito"
       },
       {
         day: 19,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Última construcción antes de los días realmente grandes.",
-        quote: "Si no coleccionas ahora, no coleccionarás nunca.",
-        bodyHtml: `
-          <p>El 19 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets extra para la campaña de tickets."
+        title: "Día 19",
+        quote: "",
+        bodyHtml: `<p>Carrera de Clasificación (Vie–Dom)<br>Torneo de apuesta con premios en efectivo.</p>`,
+        emailText: "Carrera de clasificación del fin de semana"
       },
       {
         day: 20,
-        title: "50% de bono hasta 150€",
-        subtitle: "Antes de Navidad, se aumenta un poco el nivel.",
-        quote: "Quien quiere ganar en fiestas, prepara el stack antes.",
-        bodyHtml: `
-          <p>El 20 de diciembre:</p>
-          <ul>
-            <li><strong>50% de bono</strong> sobre tu depósito cualificado</li>
-            <li>Importe máximo de bono: <strong>150€</strong></li>
-            <li>Requisitos de apuesta: <strong>3x</strong></li>
-          </ul>
-        `,
-        emailText: "Bono del 50% hasta 150€ con rollover 3x."
+        title: "Día 20",
+        quote: "",
+        bodyHtml: `<p>Día de Puntos de Torneo x2<br>Todo lo que apuestes hoy cuenta doble.</p>`,
+        emailText: "Puntos de torneo ×2"
       },
       {
         day: 21,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Antes del final, asegurar algunos tickets más.",
-        quote: "Si te mantienes, necesitas menos milagros en Nochebuena.",
-        bodyHtml: `
-          <p>El 21 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets</strong> para la campaña de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets para la campaña de tickets."
+        title: "Día 21",
+        quote: "",
+        bodyHtml: `<p>Día de Puntos de Torneo x2<br>Cada depósito de hoy cuenta doble.</p>`,
+        emailText: "Puntos de torneo ×2 (depósitos)"
       },
       {
         day: 22,
-        title: "60% de cashback sobre el primer depósito",
-        subtitle: "Empuje agresivo, pero con paracaídas real.",
-        quote: "Subir el ritmo está permitido, siempre que aterrices suave.",
-        bodyHtml: `
-          <p>El 22 de diciembre el enfoque es la seguridad:</p>
-          <ul>
-            <li><strong>60% de cashback</strong> sobre tu primer depósito cualificado del día</li>
-            <li>Válido si el día termina en negativo</li>
-            <li>Cashback con rollover <strong>1x</strong></li>
-          </ul>
-        `,
-        emailText: "60% de cashback sobre el primer depósito cualificado del día (1x)."
+        title: "Día 22",
+        quote: "",
+        bodyHtml: `<p>50% de bono en el 2º depósito del día, hasta €500</p>`,
+        emailText: "50% en el segundo depósito"
       },
       {
         day: 23,
-        title: "5 tickets para la campaña de tickets",
-        subtitle: "Última ola de tickets antes de Nochebuena.",
-        quote: "Hoy coleccionas – mañana no te quejas.",
-        bodyHtml: `
-          <p>El 23 de diciembre:</p>
-          <ul>
-            <li><strong>5 tickets extra</strong> para la campaña de tickets</li>
-          </ul>
-        `,
-        emailText: "5 tickets extra para la campaña de tickets."
+        title: "Día 23",
+        quote: "",
+        bodyHtml: `<p>Deposita un mínimo de €200 hoy y tu cashback semanal se triplica para esta semana.</p>`,
+        emailText: "Cashback triplicado"
       },
       {
         day: 24,
-        title: "Bono de Navidad 500€",
-        subtitle: "Nochebuena no es un día para límites pequeños.",
-        quote: "Si no arriesgas en Navidad, no hables de suerte en enero.",
-        bodyHtml: `
-          <p>El 24 de diciembre tienes el gran highlight del calendario:</p>
-          <ul>
-            <li>Bono de Navidad: <strong>500€</strong></li>
-            <li>Requisitos de apuesta según acuerdo VIP individual</li>
-            <li>Activable solo el 24 de diciembre en modo en vivo</li>
-          </ul>
-        `,
-        emailText: "Bono de Navidad de 500€ con condiciones de apuesta acordadas a nivel VIP."
+        title: "Día 24",
+        quote: "",
+        bodyHtml: `<p>Envía una foto tuya con un suéter navideño y recibe un Bono Especial de Navidad de hasta €300.</p>`,
+        emailText: "Bono navideño por foto"
       }
     ];
 
-    /* ---------------- Angebote EN (generisch) ---------------- */
-    const offersEn = offersDe.map(o => ({
-      day: o.day,
-      title: `Day ${o.day} – Exclusive VIP offer`,
-      subtitle: "Tailored bonus for serious play.",
-      quote: o.quote
-        ? "Different language, same rule: balance first, emotions second."
-        : "",
-      bodyHtml: `
-        <p>This door unlocks a tailored VIP offer for you based on your activity:</p>
-        <ul>
-          <li>The exact structure (bonus / cashback / tickets) is agreed directly with your VIP Manager.</li>
-          <li>Use this day as a leverage point – not as a random spin.</li>
-        </ul>
-        <p>Reply to claim the offer for day ${o.day} and we set it up according to your profile.</p>
-      `,
-      emailText: `I have just opened door ${o.day} in the VikingLuck Advent Calendar and would like to activate the VIP offer for this day, adapted to my account.`
-    }));
+    /* ---------------- Angebote FR ---------------- */
+    const offersFr = [
+      {
+        day: 1,
+        title: "Jour 1",
+        quote: "",
+        bodyHtml: `<p>20 Tours Gratuits</p>`,
+        emailText: "20 tours gratuits"
+      },
+      {
+        day: 2,
+        title: "Jour 2",
+        quote: "",
+        bodyHtml: `<p>Mission :<br>Misez 500 € sur n’importe quelle machine → Recevez un bonus de 50 €</p>`,
+        emailText: "Mission : miser 500 € → bonus 50 €"
+      },
+      {
+        day: 3,
+        title: "Jour 3",
+        quote: "",
+        bodyHtml: `<p>Bonus de 30 % sur votre premier dépôt du jour (jusqu’à 500 €)</p>`,
+        emailText: "Bonus 30 % sur premier dépôt"
+      },
+      {
+        day: 4,
+        title: "Jour 4",
+        quote: "",
+        bodyHtml: `<p>10 % de cashback quotidien sur les pertes nettes</p>`,
+        emailText: "Cashback quotidien 10 %"
+      },
+      {
+        day: 5,
+        title: "Jour 5",
+        quote: "",
+        bodyHtml: `<p>Jour de Tombola<br>Chaque dépôt de 20 € = 1 ticket pour le tirage du week-end.<br>Gain crédité lundi.</p>`,
+        emailText: "Jour de tombola – 1 ticket par 20 €"
+      },
+      {
+        day: 6,
+        title: "Jour 6",
+        quote: "",
+        bodyHtml: `<p>Cashback Booster<br>Tous les dépôts d’aujourd’hui comptent 25 % en plus pour votre cashback hebdomadaire.</p>`,
+        emailText: "Cashback Booster"
+      },
+      {
+        day: 7,
+        title: "Jour 7",
+        quote: "",
+        bodyHtml: `<p>Tickets de Tombola Doubles<br>20 € déposés = 2 tickets</p>`,
+        emailText: "Tickets de tombola doublés"
+      },
+      {
+        day: 8,
+        title: "Jour 8",
+        quote: "",
+        bodyHtml: `<p>Bonus de recharge de 50 % jusqu’à 500 € sur le premier dépôt du jour</p>`,
+        emailText: "Bonus de recharge 50 %"
+      },
+      {
+        day: 9,
+        title: "Jour 9",
+        quote: "",
+        bodyHtml: `<p>Journée Bonus Dépôt Progressif :<br>• Déposez 50 € – Bonus de base<br>• Déposez 1 000 € – Bonus 20 %<br>• Déposez 2 000 €+ – Bonus 25 %</p>`,
+        emailText: "Bonus dépôt progressif"
+      },
+      {
+        day: 10,
+        title: "Jour 10",
+        quote: "",
+        bodyHtml: `<p>50 Tours Gratuits sur n’importe quel slot de Noël</p>`,
+        emailText: "50 tours gratuits"
+      },
+      {
+        day: 11,
+        title: "Jour 11",
+        quote: "",
+        bodyHtml: `<p>15 % de cashback quotidien sur les pertes nettes</p>`,
+        emailText: "Cashback 15 %"
+      },
+      {
+        day: 12,
+        title: "Jour 12",
+        quote: "",
+        bodyHtml: `<p>Campagne de Points du Tournoi du Week-end<br>Chaque dépôt de 50 € = +10 points</p>`,
+        emailText: "Campagne de points du week-end"
+      },
+      {
+        day: 13,
+        title: "Jour 13",
+        quote: "",
+        bodyHtml: `<p>Réclamez vos +5 points pour la campagne du week-end</p>`,
+        emailText: "+5 points de tournoi"
+      },
+      {
+        day: 14,
+        title: "Jour 14",
+        quote: "",
+        bodyHtml: `<p>10 % d’assurance sur tous les dépôts du jour</p>`,
+        emailText: "Assurance 10 %"
+      },
+      {
+        day: 15,
+        title: "Jour 15",
+        quote: "",
+        bodyHtml: `<p>Deux Bonus Aujourd’hui :<br>• 1er dépôt → Bonus 30 %<br>• 2e dépôt → Bonus 20 %</p>`,
+        emailText: "Double bonus 30 % + 20 %"
+      },
+      {
+        day: 16,
+        title: "Jour 16",
+        quote: "",
+        bodyHtml: `<p>Bonus / Pari Gratuit de 50 €</p>`,
+        emailText: "Bonus ou pari gratuit de 50 €"
+      },
+      {
+        day: 17,
+        title: "Jour 17",
+        quote: "",
+        bodyHtml: `<p>Mission :<br>Misez 1 000 € aujourd’hui → Recevez un bonus de 100 €</p>`,
+        emailText: "Mission : miser 1 000 € → bonus 100 €"
+      },
+      {
+        day: 18,
+        title: "Jour 18",
+        quote: "",
+        bodyHtml: `<p>Assurance Dépôt 20 %<br>Si la journée n’est pas favorable → vous récupérez 20 % demain</p>`,
+        emailText: "Assurance dépôt 20 %"
+      },
+      {
+        day: 19,
+        title: "Jour 19",
+        quote: "",
+        bodyHtml: `<p>Course de Classement (Ven–Dim)<br>Tournoi de mise avec récompenses en cash</p>`,
+        emailText: "Course de classement week-end"
+      },
+      {
+        day: 20,
+        title: "Jour 20",
+        quote: "",
+        bodyHtml: `<p>Journée Points de Tournoi x2<br>Toutes les mises comptent double</p>`,
+        emailText: "Points de tournoi ×2"
+      },
+      {
+        day: 21,
+        title: "Jour 21",
+        quote: "",
+        bodyHtml: `<p>Journée Points de Tournoi x2<br>Chaque dépôt compte double dans la progression</p>`,
+        emailText: "Points ×2 (dépôts)"
+      },
+      {
+        day: 22,
+        title: "Jour 22",
+        quote: "",
+        bodyHtml: `<p>Bonus de 50 % sur le 2e dépôt du jour (jusqu’à 500 €)</p>`,
+        emailText: "Bonus 50 % sur le deuxième dépôt"
+      },
+      {
+        day: 23,
+        title: "Jour 23",
+        quote: "",
+        bodyHtml: `<p>Déposez minimum 200 € aujourd’hui et votre cashback hebdomadaire est triplé pour toute la semaine</p>`,
+        emailText: "Cashback hebdomadaire triplé"
+      },
+      {
+        day: 24,
+        title: "Jour 24",
+        quote: "",
+        bodyHtml: `<p>Envoyez une photo de vous avec un pull de Noël et recevez un Bonus Spécial de Noël jusqu’à 300 €</p>`,
+        emailText: "Bonus spécial de Noël"
+      }
+    ];
 
-    /* ---------------- Angebote FR (generisch) ---------------- */
-    const offersFr = offersDe.map(o => ({
-      day: o.day,
-      title: `Jour ${o.day} – Offre VIP exclusive`,
-      subtitle: "Bonus personnalisé pour un jeu sérieux.",
-      quote: o.quote
-        ? "Même principe dans une autre langue : d’abord le solde, ensuite les émotions."
-        : "",
-      bodyHtml: `
-        <p>Cette porte débloque une offre VIP sur mesure pour vous :</p>
-        <ul>
-          <li>Structure exacte (bonus / cashback / tickets) définie avec votre gestionnaire VIP.</li>
-          <li>Objectif : transformer ce jour en vrai levier, pas en simple tentative.</li>
-        </ul>
-        <p>Répondez à l’e-mail pour activer l’offre du jour ${o.day} adaptée à votre profil.</p>
-      `,
-      emailText: `Je viens d’ouvrir la porte ${o.day} du calendrier de l’Avent VikingLuck et je souhaite activer l’offre VIP pour ce jour, adaptée à mon compte.`
-    }));
-
-    /* ---------------- Angebote IT (generisch) ---------------- */
-    const offersIt = offersDe.map(o => ({
-      day: o.day,
-      title: `Giorno ${o.day} – Offerta VIP esclusiva`,
-      subtitle: "Bonus personalizzato per un gioco serio.",
-      quote: o.quote
-        ? "Stessa regola in un’altra lingua: prima il saldo, poi le emozioni."
-        : "",
-      bodyHtml: `
-        <p>Questa casella sblocca un’offerta VIP su misura per te:</p>
-        <ul>
-          <li>La struttura esatta (bonus / cashback / ticket) viene definita direttamente con il tuo VIP Manager.</li>
-          <li>Usa questo giorno come leva strategica – non come semplice tentativo casuale.</li>
-        </ul>
-        <p>Rispondi all’e-mail per attivare l’offerta del giorno ${o.day} adattata al tuo conto.</p>
-      `,
-      emailText: `Ho appena aperto la casella ${o.day} del calendario dell’Avvento VikingLuck e vorrei attivare l’offerta VIP di oggi, adattata al mio conto.`
-    }));
+    /* ---------------- Angebote IT ---------------- */
+    const offersIt = [
+      {
+        day: 1,
+        title: "Giorno 1",
+        quote: "",
+        bodyHtml: `<p>20 Giri Gratis</p>`,
+        emailText: "20 giri gratis"
+      },
+      {
+        day: 2,
+        title: "Giorno 2",
+        quote: "",
+        bodyHtml: `<p>Missione:<br>Scommetti €500 su qualsiasi slot → Ricevi un Bonus di €50</p>`,
+        emailText: "Missione: scommetti €500 → bonus €50"
+      },
+      {
+        day: 3,
+        title: "Giorno 3",
+        quote: "",
+        bodyHtml: `<p>Bonus del 30% sul tuo primo deposito di oggi (fino a €500)</p>`,
+        emailText: "Bonus 30% sul primo deposito"
+      },
+      {
+        day: 4,
+        title: "Giorno 4",
+        quote: "",
+        bodyHtml: `<p>10% di cashback giornaliero sulle perdite nette</p>`,
+        emailText: "Cashback giornaliero 10%"
+      },
+      {
+        day: 5,
+        title: "Giorno 5",
+        quote: "",
+        bodyHtml: `<p>Giorno della Riffa<br>Ogni deposito di €20 = 1 biglietto per la Grande Estrazione del Weekend<br>Premio accreditato lunedì.</p>`,
+        emailText: "Giorno della riffa – 1 biglietto ogni €20"
+      },
+      {
+        day: 6,
+        title: "Giorno 6",
+        quote: "",
+        bodyHtml: `<p>Cashback Booster<br>Tutti i depositi di oggi valgono il 25% in più per il tuo cashback settimanale.</p>`,
+        emailText: "Cashback Booster"
+      },
+      {
+        day: 7,
+        title: "Giorno 7",
+        quote: "",
+        bodyHtml: `<p>Biglietti della riffa raddoppiati<br>Deposito di €20 = 2 biglietti</p>`,
+        emailText: "Biglietti della riffa raddoppiati"
+      },
+      {
+        day: 8,
+        title: "Giorno 8",
+        quote: "",
+        bodyHtml: `<p>Bonus di ricarica del 50% fino a €500 sul primo deposito della giornata</p>`,
+        emailText: "Bonus ricarica 50%"
+      },
+      {
+        day: 9,
+        title: "Giorno 9",
+        quote: "",
+        bodyHtml: `<p>Giornata Bonus Deposito Progressivo:<br>• Deposita €50 – Bonus base<br>• Deposita €1.000 – Bonus 20%<br>• Deposita €2.000+ – Bonus 25%</p>`,
+        emailText: "Bonus deposito progressivo"
+      },
+      {
+        day: 10,
+        title: "Giorno 10",
+        quote: "",
+        bodyHtml: `<p>50 Giri Gratis su qualsiasi slot natalizia</p>`,
+        emailText: "50 giri gratis"
+      },
+      {
+        day: 11,
+        title: "Giorno 11",
+        quote: "",
+        bodyHtml: `<p>15% di cashback giornaliero sulle perdite nette</p>`,
+        emailText: "Cashback 15%"
+      },
+      {
+        day: 12,
+        title: "Giorno 12",
+        quote: "",
+        bodyHtml: `<p>Campagna Punti Weekend<br>Ogni deposito di €50 = +10 punti</p>`,
+        emailText: "Campagna punti weekend"
+      },
+      {
+        day: 13,
+        title: "Giorno 13",
+        quote: "",
+        bodyHtml: `<p>Ottieni subito +5 punti per la campagna del weekend</p>`,
+        emailText: "+5 punti weekend"
+      },
+      {
+        day: 14,
+        title: "Giorno 14",
+        quote: "",
+        bodyHtml: `<p>10% di assicurazione su tutti i depositi di oggi</p>`,
+        emailText: "Assicurazione 10%"
+      },
+      {
+        day: 15,
+        title: "Giorno 15",
+        quote: "",
+        bodyHtml: `<p>Doppio Bonus Oggi:<br>• 1º deposito → Bonus 30%<br>• 2º deposito → Bonus 20%</p>`,
+        emailText: "Doppio bonus 30% + 20%"
+      },
+      {
+        day: 16,
+        title: "Giorno 16",
+        quote: "",
+        bodyHtml: `<p>Bonus / Scommessa Gratuita da €50</p>`,
+        emailText: "Bonus o scommessa gratuita da €50"
+      },
+      {
+        day: 17,
+        title: "Giorno 17",
+        quote: "",
+        bodyHtml: `<p>Missione:<br>Scommetti €1000 oggi → Ricevi un bonus di €100</p>`,
+        emailText: "Missione: scommetti €1000 → bonus €100"
+      },
+      {
+        day: 18,
+        title: "Giorno 18",
+        quote: "",
+        bodyHtml: `<p>Assicurazione Deposito 20%<br>Se oggi la fortuna non è dalla tua parte → domani ricevi indietro il 20%</p>`,
+        emailText: "Assicurazione deposito 20%"
+      },
+      {
+        day: 19,
+        title: "Giorno 19",
+        quote: "",
+        bodyHtml: `<p>Gara in Classifica (Ven–Dom)<br>Torneo di puntate con premi in denaro</p>`,
+        emailText: "Gara in classifica weekend"
+      },
+      {
+        day: 20,
+        title: "Giorno 20",
+        quote: "",
+        bodyHtml: `<p>Giornata Punti Torneo x2<br>Tutte le puntate di oggi valgono doppio</p>`,
+        emailText: "Punti torneo ×2"
+      },
+      {
+        day: 21,
+        title: "Giorno 21",
+        quote: "",
+        bodyHtml: `<p>Giornata Punti Torneo x2<br>Ogni deposito di oggi vale doppio</p>`,
+        emailText: "Punti ×2 (depositi)"
+      },
+      {
+        day: 22,
+        title: "Giorno 22",
+        quote: "",
+        bodyHtml: `<p>Bonus del 50% sul 2º deposito della giornata (fino a €500)</p>`,
+        emailText: "Bonus 50% sul 2º deposito"
+      },
+      {
+        day: 23,
+        title: "Giorno 23",
+        quote: "",
+        bodyHtml: `<p>Deposita almeno €200 oggi e il tuo cashback settimanale verrà triplicato</p>`,
+        emailText: "Cashback settimanale triplicato"
+      },
+      {
+        day: 24,
+        title: "Giorno 24",
+        quote: "",
+        bodyHtml: `<p>Invia una foto con un maglione di Natale e ricevi un Bonus Speciale fino a €300</p>`,
+        emailText: "Bonus speciale di Natale"
+      }
+    ];
 
     let offers = offersDe;
 
@@ -1369,9 +1484,9 @@
         brand.textContent = "VikingLuck · VIP Adventskalender";
         title.textContent = "24 Tage · 24 exklusive Angebote";
         subtitle.textContent =
-          "Standard: Türen öffnen sich im Dezember am jeweiligen Kalendertag – über Admin-Passwort kannst du den Testmodus aktivieren.";
+          "Standard: Türen öffnen sich im Dezember am jeweiligen Kalendertag – wir wünschen ein Frohes Fest!";
         footer.textContent =
-          "Im Live-Betrieb gilt: Jedes Angebot ist streng an seinen Kalendertag gebunden. Im Testmodus sind alle Türen freigeschaltet.";
+          "Die Umsatzbedingungen und maximalen Cashback Beträge richten sich nach VIP Level und sind auf Nachfrage bei deinem Manager einzuholen.";
 
         loginTitle.textContent = "VikingLuck · VIP Login";
         loginSub.textContent = "Bitte mit Manager-Code und Passwort einloggen.";
@@ -1405,7 +1520,7 @@
         subtitle.textContent =
           "Du 1er au 24 décembre, une nouvelle porte s'ouvre chaque jour avec une offre VIP personnalisée.";
         footer.textContent =
-          "En mode réel, chaque offre est liée à son jour de calendrier. En mode test, toutes les portes sont déverrouillées.";
+          "Les conditions de mise et les montants maximum de cashback dépendent du niveau VIP et peuvent être obtenus auprès de votre manager sur demande.";
 
         loginTitle.textContent = "VikingLuck · Connexion VIP";
         loginSub.textContent = "Connectez-vous avec le code manager et le mot de passe.";
@@ -1422,7 +1537,7 @@
         subtitle.textContent =
           "Dal 1° al 24 dicembre si apre ogni giorno una nuova casella con un'offerta VIP personalizzata.";
         footer.textContent =
-          "In modalità live, ogni offerta è rigidamente legata al suo giorno di calendario. In modalità test, tutte le caselle sono sbloccate.";
+          "Le condizioni di scommessa e gli importi massimi di Cashback dipendono dal livello VIP e devono essere richiesti al tuo Manager.";
 
         loginTitle.textContent = "VikingLuck · Accesso VIP";
         loginSub.textContent = "Accedi con il codice manager e la password.";
@@ -1439,7 +1554,7 @@
         subtitle.textContent =
           "From 1 to 24 December, a new door opens every day with a personal VIP offer.";
         footer.textContent =
-          "In live mode, each offer is strictly bound to its calendar day. In test mode, all doors are unlocked.";
+          "The wagering requirements, maximum cashback amounts and maximum deposit bonuses depend on the VIP level and will be provided by your manager in the reply to the offer.";
 
         loginTitle.textContent = "VikingLuck · VIP Login";
         loginSub.textContent = "Please log in with manager code and password.";
@@ -1542,7 +1657,7 @@
       err.style.display = "none";
 
       activeManager = config;
-      currentManagerCode = codeRaw; // <- wird später im Betreff verwendet
+      currentManagerCode = codeRaw;
       userLanguage = config.lang;
 
       document.getElementById("loginScreen").style.display = "none";
@@ -1620,7 +1735,6 @@
     }
 
     function adjustCurrency(text) {
-      // Placeholder – aktuell keine Währungsswitch-Logik
       return text || "";
     }
 
@@ -1633,13 +1747,12 @@
 
       let subject, greeting, lineOffer, closing, emailBtnLabel, closeLabel, labelOffer;
 
-      // SUBJECT + Manager-Code im Betreff
       const codeSuffix = currentManagerCode ? " · Code " + currentManagerCode : "";
 
       if (userLanguage === "es") {
         subject = "VikingLuck – Puerta " + offer.day + " abierta" + codeSuffix;
         greeting = "Buenos días,";
-        lineOffer = "acabo de abrir la puerta " + offer.day + " en mi calendario de Adviento de VikingLuck.";
+        lineOffer = "acabo de abrir la puerta " + offer.day + " en el Calendario de Adviento de VikingLuck.";
         closing = "Por favor, activad esta oferta de Adviento para mi cuenta.\n\nMuchas gracias.";
         emailBtnLabel = "Enviar oferta por correo";
         closeLabel = "Cerrar";
